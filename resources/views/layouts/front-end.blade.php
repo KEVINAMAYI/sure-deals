@@ -28,6 +28,8 @@
     <!-- main css -->
     <link rel="stylesheet" href="front-end/css/style.css" />
     <link rel="stylesheet" href="front-end/css/responsive.css" />
+
+    @stack('styles')
 </head>
 
 <body>
