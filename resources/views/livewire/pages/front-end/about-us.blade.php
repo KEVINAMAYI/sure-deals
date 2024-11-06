@@ -79,8 +79,7 @@ new #[Layout('layouts.front-end')] class extends Component {
                     <div class="stats-item d-flex align-items-center w-100 h-100">
                         <i class="bi bi-emoji-smile color-blue flex-shrink-0"></i>
                         <div>
-                            <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1"
-                                  class="purecounter"></span>
+                            <span class="purecounter mb-2">232</span>
                             <p>Happy Clients</p>
                         </div>
                     </div>
@@ -90,8 +89,7 @@ new #[Layout('layouts.front-end')] class extends Component {
                     <div class="stats-item d-flex align-items-center w-100 h-100">
                         <i class="bi bi-journal-richtext color-orange flex-shrink-0"></i>
                         <div>
-                            <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1"
-                                  class="purecounter"></span>
+                            <span class="purecounter mb-2">521</span>
                             <p>Projects</p>
                         </div>
                     </div>
@@ -101,8 +99,7 @@ new #[Layout('layouts.front-end')] class extends Component {
                     <div class="stats-item d-flex align-items-center w-100 h-100">
                         <i class="bi bi-headset color-green flex-shrink-0"></i>
                         <div>
-                            <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1"
-                                  class="purecounter"></span>
+                            <span class="purecounter mb-2">1463</span>
                             <p>Hours Of Support</p>
                         </div>
                     </div>
@@ -112,8 +109,7 @@ new #[Layout('layouts.front-end')] class extends Component {
                     <div class="stats-item d-flex align-items-center w-100 h-100">
                         <i class="bi bi-people color-pink flex-shrink-0"></i>
                         <div>
-                            <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1"
-                                  class="purecounter"></span>
+                            <span class="purecounter mb-2">15</span>
                             <p>Hard Workers</p>
                         </div>
                     </div>
