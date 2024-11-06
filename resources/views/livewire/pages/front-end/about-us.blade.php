@@ -177,7 +177,7 @@ new #[Layout('layouts.front-end')] class extends Component {
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-lg-6">
+                <div style="margin-top:20px;" class="col-12 col-lg-6">
                     <div class="card">
                         <div class="card-body p-4 p-xxl-5">
                             <div class="bsb-ratings text-warning mb-3" data-bsb-star="3" data-bsb-star-off="2"></div>
