@@ -1,26 +1,23 @@
 <?php
 
+
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+require __DIR__ . '/auth.php';
+//require __DIR__ . '/front-end/web.php';
+require __DIR__ . '/dashboard/web.php';
 
-Route::view('/', 'welcome');
+//create symbolic link
+Route::get('/storage-link', function () {
+    Artisan::call('storage:link');
+})->name('storage-link');
 
-Route::view('dashboard', 'dashboard')
-    ->middleware(['auth', 'verified'])
-    ->name('dashboard');
+//clear cache
+Route::get('/clear-cache',function (){
+    Artisan::call('config:clear');
+    Artisan::call('route:clear');
+    Artisan::call('view:clear');
+    Artisan::call('cache:clear');
+});
 
-Route::view('profile', 'profile')
-    ->middleware(['auth'])
-    ->name('profile');
-
-require __DIR__.'/auth.php';
