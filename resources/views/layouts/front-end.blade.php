@@ -75,22 +75,34 @@
                         <div class="col-lg-7 pr-0">
                             <ul class="nav navbar-nav center_nav pull-right">
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="index.html">Home</a>
+                                    <a class="nav-link"  href="{{ route('front-end.index') }}">
+                                        Home
+                                    </a>
                                 </li>
                                 <li class="nav-item submenu dropdown">
-                                    <a href="#" class="nav-link">Shop</a>
+                                    <a class="nav-link"  href="{{ route('front-end.shop') }}">
+                                        Shop
+                                    </a>
                                 </li>
                                 <li class="nav-item submenu dropdown">
-                                    <a href="#" class="nav-link" >Store</a>
+                                    <a class="nav-link"  href="{{ route('front-end.store') }}">
+                                        Store
+                                    </a>
                                 </li>
                                 <li class="nav-item submenu dropdown">
-                                    <a href="#" class="nav-link">About</a>
+                                    <a class="nav-link"  href="{{ route('front-end.about-us') }}">
+                                        About
+                                    </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link">Testimonials</a>
+                                    <a class="nav-link"  href="{{ route('front-end.testimonials') }}">
+                                        Testimonials
+                                    </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link">Contact</a>
+                                    <a class="nav-link"  href="{{ route('front-end.contact') }}">
+                                        Contact
+                                    </a>
                                 </li>
                             </ul>
                         </div>
