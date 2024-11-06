@@ -12,206 +12,305 @@ new #[Layout('layouts.front-end')] class extends Component {
 <!--start page content-->
 
 @push('styles')
-    <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/utilities/bsb-btn-size/bsb-btn-size.css">
-    <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/utilities/margin/margin.css">
-    <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/utilities/padding/padding.css">
-    <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/components/testimonials/testimonial-4/assets/css/testimonial-4.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+          integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous">
+    <link rel="stylesheet" href="front-end/css/main.css"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.css" rel="stylesheet">
 @endpush
 
-<div class="page-content">
+<div class="container">
 
-    <!--================Home Banner Area =================-->
-    <section style="margin-bottom:20px;" class="banner_area">
-        <div class="banner_inner d-flex align-items-center">
-            <div class="container">
-                <div class="banner_content d-md-flex justify-content-between align-items-center">
-                    <div class="mb-3 mb-md-0">
-                        <h2>About Us</h2>
-                        <p>Very us move be blessed multiply night</p>
+    <section id="about" class="about section">
+
+        <div class="container">
+
+            <div class="row position-relative">
+
+                <div class="col-lg-7 about-img" data-aos="zoom-out" data-aos-delay="200"><img
+                        src="front-end/img/product/feature-product/f-p-1.jpg"></div>
+
+                <div class="col-lg-7" data-aos="fade-up" data-aos-delay="100">
+                    <h2 class="inner-title">Consequatur eius et magnam</h2>
+                    <div class="our-story">
+                        <h4>Est 1988</h4>
+                        <h3>Our Story</h3>
+                        <p>Inventore aliquam beatae at et id alias. Ipsa dolores amet consequuntur minima quia maxime
+                            autem. Quidem id sed ratione. Tenetur provident autem in reiciendis rerum at dolor. Aliquam
+                            consectetur laudantium temporibus dicta minus dolor.</p>
+                        <ul>
+                            <li><i class="bi bi-check-circle"></i>
+                                <span>Ullamco laboris nisi ut aliquip ex ea commo</span></li>
+                            <li><i class="bi bi-check-circle"></i>
+                                <span>Duis aute irure dolor in reprehenderit in</span></li>
+                            <li><i class="bi bi-check-circle"></i> <span>Ullamco laboris nisi ut aliquip ex ea</span>
+                            </li>
+                        </ul>
+                        <p>Vitae autem velit excepturi fugit. Animi ad non. Eligendi et non nesciunt suscipit
+                            repellendus porro in quo eveniet. Molestias in maxime doloremque.</p>
+
+                        <div class="watch-video d-flex align-items-center position-relative">
+                            <i class="bi bi-play-circle"></i>
+                            <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox stretched-link">Watch
+                                Video</a>
+                        </div>
                     </div>
-                    <div class="page_link">
-                        <a href="index.html">Home</a>
-                        <a href="category.html">Shop</a>
-                        <a href="category.html">Women Fashion</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Stats Counter Section -->
+    <section id="stats-counter" class="stats-counter section">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Stats</h2>
+            <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        </div><!-- End Section Title -->
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="row gy-4">
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="stats-item d-flex align-items-center w-100 h-100">
+                        <i class="bi bi-emoji-smile color-blue flex-shrink-0"></i>
+                        <div>
+                            <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1"
+                                  class="purecounter"></span>
+                            <p>Happy Clients</p>
+                        </div>
                     </div>
+                </div><!-- End Stats Item -->
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="stats-item d-flex align-items-center w-100 h-100">
+                        <i class="bi bi-journal-richtext color-orange flex-shrink-0"></i>
+                        <div>
+                            <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1"
+                                  class="purecounter"></span>
+                            <p>Projects</p>
+                        </div>
+                    </div>
+                </div><!-- End Stats Item -->
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="stats-item d-flex align-items-center w-100 h-100">
+                        <i class="bi bi-headset color-green flex-shrink-0"></i>
+                        <div>
+                            <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1"
+                                  class="purecounter"></span>
+                            <p>Hours Of Support</p>
+                        </div>
+                    </div>
+                </div><!-- End Stats Item -->
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="stats-item d-flex align-items-center w-100 h-100">
+                        <i class="bi bi-people color-pink flex-shrink-0"></i>
+                        <div>
+                            <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1"
+                                  class="purecounter"></span>
+                            <p>Hard Workers</p>
+                        </div>
+                    </div>
+                </div><!-- End Stats Item -->
+
+            </div>
+
+        </div>
+
+    </section><!-- /Stats Counter Section -->
+
+    <!-- Alt Services Section -->
+    <section id="alt-services" class="alt-services section">
+
+        <div class="container">
+
+            <div class="row justify-content-around gy-4">
+                <div class="features-image col-lg-6" data-aos="fade-up" data-aos-delay="100"><img
+                        src="front-end/img/product/feature-product/f-p-1.jpg" alt=""></div>
+
+                <div class="col-lg-5 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Enim quis est voluptatibus aliquid consequatur fugiat</h3>
+                    <p>Esse voluptas cumque vel exercitationem. Reiciendis est hic accusamus. Non ipsam et sed minima
+                        temporibus laudantium. Soluta voluptate sed facere corporis dolores excepturi</p>
+
+                    <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="300">
+                        <i class="bi bi-easel flex-shrink-0"></i>
+                        <div>
+                            <h4><a href="" class="stretched-link">Lorem Ipsum</a></h4>
+                            <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
+                                occaecati cupiditate non provident</p>
+                        </div>
+                    </div><!-- End Icon Box -->
+
+                    <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="400">
+                        <i class="bi bi-patch-check flex-shrink-0"></i>
+                        <div>
+                            <h4><a href="" class="stretched-link">Nemo Enim</a></h4>
+                            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
+                                voluptatum deleniti atque</p>
+                        </div>
+                    </div><!-- End Icon Box -->
+
+                    <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="500">
+                        <i class="bi bi-brightness-high flex-shrink-0"></i>
+                        <div>
+                            <h4><a href="" class="stretched-link">Dine Pad</a></h4>
+                            <p>Explicabo est voluptatum asperiores consequatur magnam. Et veritatis odit. Sunt aut
+                                deserunt minus aut eligendi omnis</p>
+                        </div>
+                    </div><!-- End Icon Box -->
+
+                    <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="600">
+                        <i class="bi bi-brightness-high flex-shrink-0"></i>
+                        <div>
+                            <h4><a href="" class="stretched-link">Tride clov</a></h4>
+                            <p>Est voluptatem labore deleniti quis a delectus et. Saepe dolorem libero sit non
+                                aspernatur odit amet. Et eligendi</p>
+                        </div>
+                    </div><!-- End Icon Box -->
+
+                </div>
+            </div>
+
+        </div>
+
+    </section><!-- /Alt Services Section -->
+
+    <!-- Alt Services 2 Section -->
+    <section id="alt-services-2" class="alt-services-2 section">
+
+        <div class="container">
+
+            <div class="row justify-content-around gy-4">
+
+                <div class="col-lg-6 d-flex flex-column justify-content-center order-2 order-lg-1" data-aos="fade-up"
+                     data-aos-delay="100">
+                    <h3>Enim quis est voluptatibus aliquid consequatur</h3>
+                    <p>Esse voluptas cumque vel exercitationem. Reiciendis est hic accusamus. Non ipsam et sed minima
+                        temporibus laudantium. Soluta voluptate sed facere corporis dolores excepturi</p>
+
+                    <div class="row">
+
+                        <div class="col-lg-6 icon-box d-flex">
+                            <i class="bi bi-easel flex-shrink-0"></i>
+                            <div>
+                                <h4>Lorem Ipsum</h4>
+                                <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias </p>
+                            </div>
+                        </div><!-- End Icon Box -->
+
+                        <div class="col-lg-6 icon-box d-flex">
+                            <i class="bi bi-patch-check flex-shrink-0"></i>
+                            <div>
+                                <h4>Nemo Enim</h4>
+                                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiise</p>
+                            </div>
+                        </div><!-- End Icon Box -->
+
+                        <div class="col-lg-6 icon-box d-flex">
+                            <i class="bi bi-brightness-high flex-shrink-0"></i>
+                            <div>
+                                <h4>Dine Pad</h4>
+                                <p>Explicabo est voluptatum asperiores consequatur magnam. Et veritatis odit</p>
+                            </div>
+                        </div><!-- End Icon Box -->
+
+                        <div class="col-lg-6 icon-box d-flex">
+                            <i class="bi bi-brightness-high flex-shrink-0"></i>
+                            <div>
+                                <h4>Tride clov</h4>
+                                <p>Est voluptatem labore deleniti quis a delectus et. Saepe dolorem libero sit</p>
+                            </div>
+                        </div><!-- End Icon Box -->
+
+                    </div>
+
+                </div>
+
+                <div class="features-image col-lg-5 order-1 order-lg-2" data-aos="fade-up" data-aos-delay="200">
+                    <img src="front-end/img/product/feature-product/f-p-1.jpg" alt="">
                 </div>
             </div>
         </div>
-    </section>
-    <!--================End Home Banner Area =================-->
+    </section><!-- /Alt Services 2 Section -->
 
-    <!-- About 2 Section -->
-    <!-- About 1 - Bootstrap Brain Component -->
-    <section class="py-3 py-md-5">
-        <div class="container">
-            <div class="row gy-3 gy-md-4 gy-lg-0 align-items-lg-center">
-                <div class="col-12 col-lg-6 col-xl-5">
-                    <img class="img-fluid rounded" loading="lazy" src="front-end/img/product/feature-product/f-p-1.jpg" alt="About 1">
-                </div>
-                <div class="col-12 col-lg-6 col-xl-7">
-                    <div class="row justify-content-xl-center">
-                        <div class="col-12 col-xl-11">
-                            <h2 class="mb-3">Who Are We?</h2>
-                            <p class="lead fs-4 text-secondary mb-3">We help people to build incredible brands and superior products. Our perspective is to furnish outstanding captivating services.</p>
-                            <p class="mb-5">We are a fast-growing company, but we have never lost sight of our core values. We believe in collaboration, innovation, and customer satisfaction. We are always looking for new ways to improve our products and services.</p>
-                            <div class="row gy-4 gy-md-0 gx-xxl-5X">
-                                <div class="col-12 col-md-6">
-                                    <div class="d-flex">
-                                        <div class="me-4 text-primary">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-gear-fill" viewBox="0 0 16 16">
-                                                <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z" />
-                                            </svg>
-                                        </div>
-                                        <div>
-                                            <h2 class="h4 mb-3">Versatile Brand</h2>
-                                            <p class="text-secondary mb-0">We are crafting a digital method that subsists life across all mediums.</p>
-                                        </div>
-                                    </div>
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Testimonials</h2>
+            <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        </div><!-- End Section Title -->
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="swiper init-swiper">
+                <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              },
+              "breakpoints": {
+                "320": {
+                  "slidesPerView": 1,
+                  "spaceBetween": 40
+                },
+                "1200": {
+                  "slidesPerView": 2,
+                  "spaceBetween": 20
+                }
+              }
+            }
+
+
+                </script>
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-wrap">
+                            <div class="testimonial-item">
+                                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                                <h3>Saul Goodman</h3>
+                                <h4>Ceo &amp; Founder</h4>
+                                <div class="stars">
+                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                        class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                        class="bi bi-star-fill"></i>
                                 </div>
-                                <div class="col-12 col-md-6">
-                                    <div class="d-flex">
-                                        <div class="me-4 text-primary">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-fire" viewBox="0 0 16 16">
-                                                <path d="M8 16c3.314 0 6-2 6-5.5 0-1.5-.5-4-2.5-6 .25 1.5-1.25 2-1.25 2C11 4 9 .5 6 0c.357 2 .5 4-2 6-1.25 1-2 2.729-2 4.5C2 14 4.686 16 8 16Zm0-1c-1.657 0-3-1-3-2.75 0-.75.25-2 1.25-3C6.125 10 7 10.5 7 10.5c-.375-1.25.5-3.25 2-3.5-.179 1-.25 2 1 3 .625.5 1 1.364 1 2.25C11 14 9.657 15 8 15Z" />
-                                            </svg>
-                                        </div>
-                                        <div>
-                                            <h2 class="h4 mb-3">Digital Agency</h2>
-                                            <p class="text-secondary mb-0">We believe in innovation by merging primary with elaborate ideas.</p>
-                                        </div>
-                                    </div>
-                                </div>
+                                <p>
+                                    <i class="bi bi-quote quote-icon-left"></i>
+                                    <span>Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.</span>
+                                    <i class="bi bi-quote quote-icon-right"></i>
+                                </p>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                    </div><!-- End testimonial item -->
 
-    <!-- About 7 - Bootstrap Brain Component -->
-    <section class="py-3 py-md-5 py-xl-8">
-        <div class="container">
-            <div class="row justify-content-md-center">
-                <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
-                    <h2 class="mb-4 display-5 text-center">About Us</h2>
-                    <p class="text-secondary mb-5 text-center lead fs-4">We believe in the power of teamwork and collaboration. Our diverse experts work tirelessly to deliver innovative solutions tailored to our clients' needs.</p>
-                    <hr class="w-50 mx-auto mb-5 mb-xl-9 border-dark-subtle">
                 </div>
+                <div class="swiper-pagination"></div>
             </div>
-        </div>
 
-        <div class="container">
-            <div class="row gy-4 gy-lg-0 align-items-lg-center">
-                <div class="col-12 col-lg-6">
-                    <img class="img-fluid rounded border border-dark" loading="lazy" src="front-end/img/product/feature-product/f-p-2.jpg" alt="About Us">
-                </div>
-                <div class="col-12 col-lg-6 col-xxl-6">
-                    <div class="row justify-content-lg-end">
-                        <div class="col-12 col-lg-11">
-                            <div class="about-wrapper">
-                                <p class="lead mb-4 mb-md-5">As a socially responsible entity, we are deeply committed to positively impacting the communities we serve and the world at large. Through various initiatives and partnerships, we actively contribute to environmental sustainability, social welfare, and educational advancement.</p>
-                                <div class="row gy-4 mb-4 mb-md-5">
-                                    <div class="col-12 col-md-6">
-                                        <div class="card border border-dark">
-                                            <div class="card-body p-4">
-                                                <h3 class="display-5 fw-bold text-primary text-center mb-2">370+</h3>
-                                                <p class="fw-bold text-center m-0">Qualified Experts</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-6">
-                                        <div class="card border border-dark">
-                                            <div class="card-body p-4">
-                                                <h3 class="display-5 fw-bold text-primary text-center mb-2">18k+</h3>
-                                                <p class="fw-bold text-center m-0">Satisfied Clients</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="#!" class="btn btn-primary bsb-btn-2xl">
-                                    Explore
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
-    </section>
-
-    <!-- Testimonial 4 - Bootstrap Brain Component -->
-    <section class="py-3 py-md-5 py-xl-8">
-        <div class="container overflow-hidden">
-            <div class="row gy-3 gy-lg-4">
-                <div class="col-12 col-lg-6">
-                    <div class="card">
-                        <div class="card-body p-4 p-xxl-5">
-                            <div class="bsb-ratings text-warning mb-3" data-bsb-star="5" data-bsb-star-off="0"></div>
-                            <blockquote class="bsb-blockquote-icon mb-3">We were so impressed with the work they did for us. They were able to take our vision and turn it into a reality, and they did it all on time and within budget. We would highly recommend them to anyone looking for a reliable and professional partner.</blockquote>
-                            <figure class="d-flex align-items-center m-0 p-0">
-                                <img class="img-fluid rounded rounded-circle m-0 border border-5" loading="lazy" src="./assets/img/testimonial-img-1.jpg" alt="Luna John">
-                                <figcaption class="ms-3">
-                                    <h4 class="mb-1 h5">Luna John</h4>
-                                    <h5 class="fs-6 text-secondary mb-0">UX Designer</h5>
-                                </figcaption>
-                            </figure>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-6">
-                    <div class="card">
-                        <div class="card-body p-4 p-xxl-5">
-                            <div class="bsb-ratings text-warning mb-3" data-bsb-star="4" data-bsb-star-off="1"></div>
-                            <blockquote class="bsb-blockquote-icon mb-3">We were looking for a company that could help us develop a new website that was both visually appealing and user-friendly. We are so happy with the results, and we would highly recommend them to anyone looking for a new website.</blockquote>
-                            <figure class="d-flex align-items-center m-0 p-0">
-                                <img class="img-fluid rounded rounded-circle m-0 border border-5" loading="lazy" src="./assets/img/testimonial-img-2.jpg" alt="Mark Smith">
-                                <figcaption class="ms-3">
-                                    <h4 class="mb-1 h5">Mark Smith</h4>
-                                    <h5 class="fs-6 text-secondary mb-0">Marketing Specialist</h5>
-                                </figcaption>
-                            </figure>
-                        </div>
-                    </div>
-                </div>
-                <div style="margin-top:20px;" class="col-12 col-lg-6">
-                    <div class="card">
-                        <div class="card-body p-4 p-xxl-5">
-                            <div class="bsb-ratings text-warning mb-3" data-bsb-star="3" data-bsb-star-off="2"></div>
-                            <blockquote class="bsb-blockquote-icon mb-3">We were struggling to manage our finances effectively. We needed help developing a financial plan. They create a financial plan that worked for us, and they showed us how to track our spending more effectively. We are so grateful for the help.</blockquote>
-                            <figure class="d-flex align-items-center m-0 p-0">
-                                <img class="img-fluid rounded rounded-circle m-0 border border-5" loading="lazy" src="./assets/img/testimonial-img-3.jpg" alt="Michael Wilson">
-                                <figcaption class="ms-3">
-                                    <h4 class="mb-1 h5">Michael Wilson</h4>
-                                    <h5 class="fs-6 text-secondary mb-0">SEO Expert</h5>
-                                </figcaption>
-                            </figure>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-6">
-                    <div class="card">
-                        <div class="card-body p-4 p-xxl-5">
-                            <div class="bsb-ratings text-warning mb-3" data-bsb-star="5" data-bsb-star-off="0"></div>
-                            <blockquote class="bsb-blockquote-icon mb-3">We were looking for a company that could help us with our branding. We needed a website and marketing materials. They were able to create a brand identity that we loved. They worked with us to develop a logo that represented our company.</blockquote>
-                            <figure class="d-flex align-items-center m-0 p-0">
-                                <img class="img-fluid rounded rounded-circle m-0 border border-5" loading="lazy" src="./assets/img/testimonial-img-4.jpg" alt="Luke Reeves">
-                                <figcaption class="ms-3">
-                                    <h4 class="mb-1 h5">Luke Reeves</h4>
-                                    <h5 class="fs-6 text-secondary mb-0">Sales Manager</h5>
-                                </figcaption>
-                            </figure>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    </section><!-- /Testimonials Section -->
 </div>
-<!--end page content-->
+@push('scripts')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js">
+@endpush
 
 
 

@@ -6,28 +6,28 @@
     <base href="{{ URL::to('/') }}">
 
     <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <link rel="icon" href="img/favicon.png" type="image/png" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="icon" href="img/favicon.png" type="image/png"/>
 
     <!-- Scripts -->
     @vite('resources/css/front-end.css')
 
     <title>Eiser ecommerce</title>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="front-end/css/bootstrap.css" />
-    <link rel="stylesheet" href="front-end/vendors/linericon/style.css" />
-    <link rel="stylesheet" href="front-end/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="front-end/css/themify-icons.css" />
-    <link rel="stylesheet" href="front-end/css/flaticon.css" />
-    <link rel="stylesheet" href="front-end/vendors/owl-carousel/owl.carousel.min.css" />
-    <link rel="stylesheet" href="front-end/vendors/lightbox/simpleLightbox.css" />
-    <link rel="stylesheet" href="front-end/vendors/nice-select/css/nice-select.css" />
-    <link rel="stylesheet" href="front-end/vendors/animate-css/animate.css" />
-    <link rel="stylesheet" href="front-end/vendors/jquery-ui/jquery-ui.css" />
+    <link rel="stylesheet" href="front-end/css/bootstrap.css"/>
+    <link rel="stylesheet" href="front-end/vendors/linericon/style.css"/>
+    <link rel="stylesheet" href="front-end/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="front-end/css/themify-icons.css"/>
+    <link rel="stylesheet" href="front-end/css/flaticon.css"/>
+    <link rel="stylesheet" href="front-end/vendors/owl-carousel/owl.carousel.min.css"/>
+    <link rel="stylesheet" href="front-end/vendors/lightbox/simpleLightbox.css"/>
+    <link rel="stylesheet" href="front-end/vendors/nice-select/css/nice-select.css"/>
+    <link rel="stylesheet" href="front-end/vendors/animate-css/animate.css"/>
+    <link rel="stylesheet" href="front-end/vendors/jquery-ui/jquery-ui.css"/>
     <!-- main css -->
-    <link rel="stylesheet" href="front-end/css/style.css" />
-    <link rel="stylesheet" href="front-end/css/responsive.css" />
+    <link rel="stylesheet" href="front-end/css/style.css"/>
+    <link rel="stylesheet" href="front-end/css/responsive.css"/>
 
     @stack('styles')
 </head>
@@ -63,9 +63,10 @@
             <nav class="navbar navbar-expand-lg navbar-light w-100">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <a class="navbar-brand logo_h" href="index.html">
-                    <img src="img/logo.png" alt="" />
+                    <img src="img/logo.png" alt=""/>
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent"
                         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -77,32 +78,32 @@
                         <div class="col-lg-7 pr-0">
                             <ul class="nav navbar-nav center_nav pull-right">
                                 <li class="nav-item active">
-                                    <a class="nav-link"  href="{{ route('front-end.index') }}">
+                                    <a class="nav-link" href="{{ route('front-end.index') }}">
                                         Home
                                     </a>
                                 </li>
                                 <li class="nav-item submenu dropdown">
-                                    <a class="nav-link"  href="{{ route('front-end.shop') }}">
+                                    <a class="nav-link" href="{{ route('front-end.shop') }}">
                                         Shop
                                     </a>
                                 </li>
                                 <li class="nav-item submenu dropdown">
-                                    <a class="nav-link"  href="{{ route('front-end.store') }}">
+                                    <a class="nav-link" href="{{ route('front-end.store') }}">
                                         Store
                                     </a>
                                 </li>
                                 <li class="nav-item submenu dropdown">
-                                    <a class="nav-link"  href="{{ route('front-end.about-us') }}">
+                                    <a class="nav-link" href="{{ route('front-end.about-us') }}">
                                         About
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link"  href="{{ route('front-end.testimonials') }}">
+                                    <a class="nav-link" href="{{ route('front-end.testimonials') }}">
                                         Testimonials
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link"  href="{{ route('front-end.contact') }}">
+                                    <a class="nav-link" href="{{ route('front-end.contact') }}">
                                         Contact
                                     </a>
                                 </li>
@@ -172,9 +173,11 @@
                 <h4>Newsletter</h4>
                 <p>You can trust us. we only send promo offers,</p>
                 <div class="form-wrap" id="mc_embed_signup">
-                    <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
+                    <form target="_blank"
+                          action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
                           method="get" class="form-inline">
-                        <input class="form-control" name="EMAIL" placeholder="Your Email Address" onfocus="this.placeholder = ''"
+                        <input class="form-control" name="EMAIL" placeholder="Your Email Address"
+                               onfocus="this.placeholder = ''"
                                onblur="this.placeholder = 'Your Email Address '" required="" type="email">
                         <button class="click-btn btn btn-default">Subscribe</button>
                         <div style="position: absolute; left: -5000px;">
@@ -187,8 +190,11 @@
             </div>
         </div>
         <div class="footer-bottom row align-items-center">
-            <p class="footer-text m-0 col-lg-8 col-md-12"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+            <p class="footer-text m-0 col-lg-8 col-md-12">
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a
+                    href="https://colorlib.com" target="_blank">Colorlib</a>
                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
             <div class="col-lg-4 col-md-12 footer-social">
                 <a href="#"><i class="fa fa-facebook"></i></a>
@@ -217,6 +223,6 @@
 <script src="front-end/vendors/counter-up/jquery.counterup.js"></script>
 <script src="front-end/js/mail-script.js"></script>
 <script src="front-end/js/theme.js"></script>
+@stack('scripts')
 </body>
-
 </html>
