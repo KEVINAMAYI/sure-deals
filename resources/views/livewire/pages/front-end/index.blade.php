@@ -7,9 +7,10 @@ use App\Models\Product;
 use Livewire\Attributes\Layout;
 use Livewire\Volt\Component;
 
-new #[Layout('layouts.front-end')] class extends Component
-{} ?>
+new #[Layout('layouts.front-end')] class extends Component {
+} ?>
 <!--start page content-->
+
 <div class="page-content">
 
     <!--================Home Banner Area =================-->
@@ -96,12 +97,9 @@ new #[Layout('layouts.front-end')] class extends Component
                             <img class="img-fluid w-100" src="front-end/img/product/feature-product/f-p-1.jpg" alt=""/>
                             <div class="p_icon">
                                 <a href="#">
-                                    <i class="ti-eye"></i>
+                                    <i class="fab fa-whatsapp"></i>
                                 </a>
-                                <a href="#">
-                                    <i class="ti-heart"></i>
-                                </a>
-                                <a href="#">
+                                <a href="{{ route('front-end.product-details') }}">
                                     <i class="ti-shopping-cart"></i>
                                 </a>
                             </div>
@@ -124,12 +122,9 @@ new #[Layout('layouts.front-end')] class extends Component
                             <img class="img-fluid w-100" src="front-end/img/product/feature-product/f-p-2.jpg" alt=""/>
                             <div class="p_icon">
                                 <a href="#">
-                                    <i class="ti-eye"></i>
+                                    <i class="fab fa-whatsapp"></i>
                                 </a>
-                                <a href="#">
-                                    <i class="ti-heart"></i>
-                                </a>
-                                <a href="#">
+                                <a href="{{ route('front-end.product-details') }}">
                                     <i class="ti-shopping-cart"></i>
                                 </a>
                             </div>
@@ -152,12 +147,9 @@ new #[Layout('layouts.front-end')] class extends Component
                             <img class="img-fluid w-100" src="front-end/img/product/feature-product/f-p-3.jpg" alt=""/>
                             <div class="p_icon">
                                 <a href="#">
-                                    <i class="ti-eye"></i>
+                                    <i class="fab fa-whatsapp"></i>
                                 </a>
-                                <a href="#">
-                                    <i class="ti-heart"></i>
-                                </a>
-                                <a href="#">
+                                <a href="{{ route('front-end.product-details') }}">
                                     <i class="ti-shopping-cart"></i>
                                 </a>
                             </div>
@@ -216,7 +208,7 @@ new #[Layout('layouts.front-end')] class extends Component
                             <img class="img-fluid" src="front-end/img/product/new-product/new-product1.png" alt=""/>
                         </div>
                         <h4>$120.70</h4>
-                        <a href="#" class="main_btn">Add to cart</a>
+                        <a href="{{ route('front-end.shop') }}" class="main_btn">SHOP NOW</a>
                     </div>
                 </div>
 
@@ -228,12 +220,9 @@ new #[Layout('layouts.front-end')] class extends Component
                                     <img class="img-fluid w-100" src="front-end/img/product/new-product/n1.jpg" alt=""/>
                                     <div class="p_icon">
                                         <a href="#">
-                                            <i class="ti-eye"></i>
+                                            <i class="fab fa-whatsapp"></i>
                                         </a>
-                                        <a href="#">
-                                            <i class="ti-heart"></i>
-                                        </a>
-                                        <a href="#">
+                                        <a href="{{ route('front-end.product-details') }}">
                                             <i class="ti-shopping-cart"></i>
                                         </a>
                                     </div>
@@ -256,12 +245,9 @@ new #[Layout('layouts.front-end')] class extends Component
                                     <img class="img-fluid w-100" src="front-end/img/product/new-product/n2.jpg" alt=""/>
                                     <div class="p_icon">
                                         <a href="#">
-                                            <i class="ti-eye"></i>
+                                            <i class="fab fa-whatsapp"></i>
                                         </a>
-                                        <a href="#">
-                                            <i class="ti-heart"></i>
-                                        </a>
-                                        <a href="#">
+                                        <a href="{{ route('front-end.product-details') }}">
                                             <i class="ti-shopping-cart"></i>
                                         </a>
                                     </div>
@@ -284,12 +270,9 @@ new #[Layout('layouts.front-end')] class extends Component
                                     <img class="img-fluid w-100" src="front-end/img/product/new-product/n3.jpg" alt=""/>
                                     <div class="p_icon">
                                         <a href="#">
-                                            <i class="ti-eye"></i>
+                                            <i class="fab fa-whatsapp"></i>
                                         </a>
-                                        <a href="#">
-                                            <i class="ti-heart"></i>
-                                        </a>
-                                        <a href="#">
+                                        <a href="{{ route('front-end.product-details') }}">
                                             <i class="ti-shopping-cart"></i>
                                         </a>
                                     </div>
@@ -312,12 +295,9 @@ new #[Layout('layouts.front-end')] class extends Component
                                     <img class="img-fluid w-100" src="front-end/img/product/new-product/n4.jpg" alt=""/>
                                     <div class="p_icon">
                                         <a href="#">
-                                            <i class="ti-eye"></i>
+                                            <i class="fab fa-whatsapp"></i>
                                         </a>
-                                        <a href="#">
-                                            <i class="ti-heart"></i>
-                                        </a>
-                                        <a href="#">
+                                        <a href="{{ route('front-end.product-details') }}">
                                             <i class="ti-shopping-cart"></i>
                                         </a>
                                     </div>
@@ -359,12 +339,9 @@ new #[Layout('layouts.front-end')] class extends Component
                             <img class="img-fluid w-100" src="front-end/img/product/inspired-product/i1.jpg" alt=""/>
                             <div class="p_icon">
                                 <a href="#">
-                                    <i class="ti-eye"></i>
+                                    <i class="fab fa-whatsapp"></i>
                                 </a>
-                                <a href="#">
-                                    <i class="ti-heart"></i>
-                                </a>
-                                <a href="#">
+                                <a href="{{ route('front-end.product-details') }}">
                                     <i class="ti-shopping-cart"></i>
                                 </a>
                             </div>
@@ -387,12 +364,9 @@ new #[Layout('layouts.front-end')] class extends Component
                             <img class="img-fluid w-100" src="front-end/img/product/inspired-product/i2.jpg" alt=""/>
                             <div class="p_icon">
                                 <a href="#">
-                                    <i class="ti-eye"></i>
+                                    <i class="fab fa-whatsapp"></i>
                                 </a>
-                                <a href="#">
-                                    <i class="ti-heart"></i>
-                                </a>
-                                <a href="#">
+                                <a href="{{ route('front-end.product-details') }}">
                                     <i class="ti-shopping-cart"></i>
                                 </a>
                             </div>
@@ -415,12 +389,9 @@ new #[Layout('layouts.front-end')] class extends Component
                             <img class="img-fluid w-100" src="front-end/img/product/inspired-product/i3.jpg" alt=""/>
                             <div class="p_icon">
                                 <a href="#">
-                                    <i class="ti-eye"></i>
+                                    <i class="fab fa-whatsapp"></i>
                                 </a>
-                                <a href="#">
-                                    <i class="ti-heart"></i>
-                                </a>
-                                <a href="#">
+                                <a href="{{ route('front-end.product-details') }}">
                                     <i class="ti-shopping-cart"></i>
                                 </a>
                             </div>
@@ -443,12 +414,9 @@ new #[Layout('layouts.front-end')] class extends Component
                             <img class="img-fluid w-100" src="front-end/img/product/inspired-product/i4.jpg" alt=""/>
                             <div class="p_icon">
                                 <a href="#">
-                                    <i class="ti-eye"></i>
+                                    <i class="fab fa-whatsapp"></i>
                                 </a>
-                                <a href="#">
-                                    <i class="ti-heart"></i>
-                                </a>
-                                <a href="#">
+                                <a href="{{ route('front-end.product-details') }}">
                                     <i class="ti-shopping-cart"></i>
                                 </a>
                             </div>
@@ -471,12 +439,9 @@ new #[Layout('layouts.front-end')] class extends Component
                             <img class="img-fluid w-100" src="front-end/img/product/inspired-product/i5.jpg" alt=""/>
                             <div class="p_icon">
                                 <a href="#">
-                                    <i class="ti-eye"></i>
+                                    <i class="fab fa-whatsapp"></i>
                                 </a>
-                                <a href="#">
-                                    <i class="ti-heart"></i>
-                                </a>
-                                <a href="#">
+                                <a href="{{ route('front-end.product-details') }}">
                                     <i class="ti-shopping-cart"></i>
                                 </a>
                             </div>
@@ -499,12 +464,9 @@ new #[Layout('layouts.front-end')] class extends Component
                             <img class="img-fluid w-100" src="front-end/img/product/inspired-product/i6.jpg" alt=""/>
                             <div class="p_icon">
                                 <a href="#">
-                                    <i class="ti-eye"></i>
+                                    <i class="fab fa-whatsapp"></i>
                                 </a>
-                                <a href="#">
-                                    <i class="ti-heart"></i>
-                                </a>
-                                <a href="#">
+                                <a href="{{ route('front-end.product-details') }}">
                                     <i class="ti-shopping-cart"></i>
                                 </a>
                             </div>
@@ -527,12 +489,9 @@ new #[Layout('layouts.front-end')] class extends Component
                             <img class="img-fluid w-100" src="front-end/img/product/inspired-product/i7.jpg" alt=""/>
                             <div class="p_icon">
                                 <a href="#">
-                                    <i class="ti-eye"></i>
+                                    <i class="fab fa-whatsapp"></i>
                                 </a>
-                                <a href="#">
-                                    <i class="ti-heart"></i>
-                                </a>
-                                <a href="#">
+                                <a href="{{ route('front-end.product-details') }}">
                                     <i class="ti-shopping-cart"></i>
                                 </a>
                             </div>
@@ -555,12 +514,9 @@ new #[Layout('layouts.front-end')] class extends Component
                             <img class="img-fluid w-100" src="front-end/img/product/inspired-product/i8.jpg" alt=""/>
                             <div class="p_icon">
                                 <a href="#">
-                                    <i class="ti-eye"></i>
+                                    <i class="fab fa-whatsapp"></i>
                                 </a>
-                                <a href="#">
-                                    <i class="ti-heart"></i>
-                                </a>
-                                <a href="#">
+                                <a href="{{ route('front-end.product-details') }}">
                                     <i class="ti-shopping-cart"></i>
                                 </a>
                             </div>
@@ -579,105 +535,9 @@ new #[Layout('layouts.front-end')] class extends Component
             </div>
         </div>
     </section>
-    <!--================ End Inspired Product Area =================-->
-
-    <!--================ Start Blog Area =================-->
-    <section class="blog-area section-gap">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-12">
-                    <div class="main_title">
-                        <h2><span>latest blog</span></h2>
-                        <p>Bring called seed first of third give itself now ment</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-blog">
-                        <div class="thumb">
-                            <img class="img-fluid" src="front-end/img/b1.jpg" alt="">
-                        </div>
-                        <div class="short_details">
-                            <div class="meta-top d-flex">
-                                <a href="#">By Admin</a>
-                                <a href="#"><i class="ti-comments-smiley"></i>2 Comments</a>
-                            </div>
-                            <a class="d-block" href="single-blog.html">
-                                <h4>Ford clever bed stops your sleeping
-                                    partner hogging the whole</h4>
-                            </a>
-                            <div class="text-wrap">
-                                <p>
-                                    Let one fifth i bring fly to divided face for bearing the divide unto seed winged
-                                    divided light
-                                    Forth.
-                                </p>
-                            </div>
-                            <a href="#" class="blog_btn">Learn More <span class="ml-2 ti-arrow-right"></span></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-blog">
-                        <div class="thumb">
-                            <img class="img-fluid" src="front-end/img/b2.jpg" alt="">
-                        </div>
-                        <div class="short_details">
-                            <div class="meta-top d-flex">
-                                <a href="#">By Admin</a>
-                                <a href="#"><i class="ti-comments-smiley"></i>2 Comments</a>
-                            </div>
-                            <a class="d-block" href="single-blog.html">
-                                <h4>Ford clever bed stops your sleeping
-                                    partner hogging the whole</h4>
-                            </a>
-                            <div class="text-wrap">
-                                <p>
-                                    Let one fifth i bring fly to divided face for bearing the divide unto seed winged
-                                    divided light
-                                    Forth.
-                                </p>
-                            </div>
-                            <a href="#" class="blog_btn">Learn More <span class="ml-2 ti-arrow-right"></span></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-blog">
-                        <div class="thumb">
-                            <img class="img-fluid" src="front-end/img/b3.jpg" alt="">
-                        </div>
-                        <div class="short_details">
-                            <div class="meta-top d-flex">
-                                <a href="#">By Admin</a>
-                                <a href="#"><i class="ti-comments-smiley"></i>2 Comments</a>
-                            </div>
-                            <a class="d-block" href="single-blog.html">
-                                <h4>Ford clever bed stops your sleeping
-                                    partner hogging the whole</h4>
-                            </a>
-                            <div class="text-wrap">
-                                <p>
-                                    Let one fifth i bring fly to divided face for bearing the divide unto seed winged
-                                    divided light
-                                    Forth.
-                                </p>
-                            </div>
-                            <a href="#" class="blog_btn">Learn More <span class="ml-2 ti-arrow-right"></span></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--================ End Blog Area =================-->
-
 </div>
 <!--end page content-->
+
 
 
 

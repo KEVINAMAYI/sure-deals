@@ -63,12 +63,9 @@ new #[Layout('layouts.front-end')] class extends Component {
                                         />
                                         <div class="p_icon">
                                             <a href="#">
-                                                <i class="ti-eye"></i>
+                                                <i class="fab fa-whatsapp"></i>
                                             </a>
-                                            <a href="#">
-                                                <i class="ti-heart"></i>
-                                            </a>
-                                            <a href="#">
+                                            <a href="{{ route('front-end.product-details') }}">
                                                 <i class="ti-shopping-cart"></i>
                                             </a>
                                         </div>
@@ -95,12 +92,9 @@ new #[Layout('layouts.front-end')] class extends Component {
                                         />
                                         <div class="p_icon">
                                             <a href="#">
-                                                <i class="ti-eye"></i>
+                                                <i class="fab fa-whatsapp"></i>
                                             </a>
-                                            <a href="#">
-                                                <i class="ti-heart"></i>
-                                            </a>
-                                            <a href="#">
+                                            <a href="{{ route('front-end.product-details') }}">
                                                 <i class="ti-shopping-cart"></i>
                                             </a>
                                         </div>
@@ -127,12 +121,9 @@ new #[Layout('layouts.front-end')] class extends Component {
                                         />
                                         <div class="p_icon">
                                             <a href="#">
-                                                <i class="ti-eye"></i>
+                                                <i class="fab fa-whatsapp"></i>
                                             </a>
-                                            <a href="#">
-                                                <i class="ti-heart"></i>
-                                            </a>
-                                            <a href="#">
+                                            <a href="{{ route('front-end.product-details') }}">
                                                 <i class="ti-shopping-cart"></i>
                                             </a>
                                         </div>
@@ -159,12 +150,9 @@ new #[Layout('layouts.front-end')] class extends Component {
                                         />
                                         <div class="p_icon">
                                             <a href="#">
-                                                <i class="ti-eye"></i>
+                                                <i class="fab fa-whatsapp"></i>
                                             </a>
-                                            <a href="#">
-                                                <i class="ti-heart"></i>
-                                            </a>
-                                            <a href="#">
+                                            <a href="{{ route('front-end.product-details') }}">
                                                 <i class="ti-shopping-cart"></i>
                                             </a>
                                         </div>
@@ -191,12 +179,9 @@ new #[Layout('layouts.front-end')] class extends Component {
                                         />
                                         <div class="p_icon">
                                             <a href="#">
-                                                <i class="ti-eye"></i>
+                                                <i class="fab fa-whatsapp"></i>
                                             </a>
-                                            <a href="#">
-                                                <i class="ti-heart"></i>
-                                            </a>
-                                            <a href="#">
+                                            <a href="{{ route('front-end.product-details') }}">
                                                 <i class="ti-shopping-cart"></i>
                                             </a>
                                         </div>
@@ -223,12 +208,9 @@ new #[Layout('layouts.front-end')] class extends Component {
                                         />
                                         <div class="p_icon">
                                             <a href="#">
-                                                <i class="ti-eye"></i>
+                                                <i class="fab fa-whatsapp"></i>
                                             </a>
-                                            <a href="#">
-                                                <i class="ti-heart"></i>
-                                            </a>
-                                            <a href="#">
+                                            <a href="{{ route('front-end.product-details') }}">
                                                 <i class="ti-shopping-cart"></i>
                                             </a>
                                         </div>
@@ -255,12 +237,9 @@ new #[Layout('layouts.front-end')] class extends Component {
                                         />
                                         <div class="p_icon">
                                             <a href="#">
-                                                <i class="ti-eye"></i>
+                                                <i class="fab fa-whatsapp"></i>
                                             </a>
-                                            <a href="#">
-                                                <i class="ti-heart"></i>
-                                            </a>
-                                            <a href="#">
+                                            <a href="{{ route('front-end.product-details') }}">
                                                 <i class="ti-shopping-cart"></i>
                                             </a>
                                         </div>
@@ -287,12 +266,9 @@ new #[Layout('layouts.front-end')] class extends Component {
                                         />
                                         <div class="p_icon">
                                             <a href="#">
-                                                <i class="ti-eye"></i>
+                                                <i class="fab fa-whatsapp"></i>
                                             </a>
-                                            <a href="#">
-                                                <i class="ti-heart"></i>
-                                            </a>
-                                            <a href="#">
+                                            <a href="{{ route('front-end.product-details') }}">
                                                 <i class="ti-shopping-cart"></i>
                                             </a>
                                         </div>
@@ -319,12 +295,9 @@ new #[Layout('layouts.front-end')] class extends Component {
                                         />
                                         <div class="p_icon">
                                             <a href="#">
-                                                <i class="ti-eye"></i>
+                                                <i class="fab fa-whatsapp"></i>
                                             </a>
-                                            <a href="#">
-                                                <i class="ti-heart"></i>
-                                            </a>
-                                            <a href="#">
+                                            <a href="{{ route('front-end.product-details') }}">
                                                 <i class="ti-shopping-cart"></i>
                                             </a>
                                         </div>
