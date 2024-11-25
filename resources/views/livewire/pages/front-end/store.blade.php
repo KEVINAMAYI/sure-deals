@@ -8,6 +8,15 @@ use Livewire\Attributes\Layout;
 use Livewire\Volt\Component;
 
 new #[Layout('layouts.front-end')] class extends Component {
+
+    public $categories;
+
+    public function mount()
+    {
+        $this->categories = Category::all();
+    }
+
+
 } ?>
 
 @push('styles')
@@ -22,87 +31,23 @@ new #[Layout('layouts.front-end')] class extends Component {
     <main class="main">
         <!-- Services Section -->
         <section id="services" class="services section light-background">
-
             <div class="container">
-
                 <div class="row gy-4">
-
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                        <div class="service-item  position-relative">
-                            <div class="icon">
-                                <i class="fa-solid fa-mountain-city"></i>
+                    @foreach($categories as $category)
+                        <div class="col-lg-4 col-md-6 mt-4" data-aos="fade-up" data-aos-delay="100">
+                            <div class="service-item  position-relative">
+                                <div class="icon">
+                                    <i class="fa-solid {{ $category->icon }}"></i>
+                                </div>
+                                <h3>{{ $category->name }}</h3>
+                                <p>{{ $category->description }}</p>
+                                <a href="{{ route('front-end.shop') }}" class="btn-success mt-2 btn ">SHOP NOW<i
+                                        class="ml-1 bi bi-arrow-right"></i></a>
                             </div>
-                            <h3>Nesciunt Mete</h3>
-                            <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores
-                                iure perferendis tempore et consequatur.</p>
-                            <a href="{{ route('front-end.shop') }}" class="btn-success mt-2 btn ">SHOP NOW<i class="ml-1 bi bi-arrow-right"></i></a>
-                        </div>
-                    </div><!-- End Service Item -->
-
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                        <div class="service-item position-relative">
-                            <div class="icon">
-                                <i class="fa-solid fa-arrow-up-from-ground-water"></i>
-                            </div>
-                            <h3>Eosle Commodi</h3>
-                            <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores
-                                iure perferendis tempore et consequatur.</p>
-                            <a href="{{ route('front-end.shop') }}" class="btn-success mt-2 btn ">SHOP NOW<i class="ml-1 bi bi-arrow-right"></i></a>
-                        </div>
-                    </div><!-- End Service Item -->
-
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                        <div class="service-item position-relative">
-                            <div class="icon">
-                                <i class="fa-solid fa-compass-drafting"></i>
-                            </div>
-                            <h3>Ledo Markt</h3>
-                            <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores
-                                iure perferendis tempore et consequatur.</p>
-                            <a href="{{ route('front-end.shop') }}" class="btn-success mt-2 btn ">SHOP NOW<i class="ml-1 bi bi-arrow-right"></i></a>
-                        </div>
-                    </div><!-- End Service Item -->
-
-                    <div class="col-lg-4 mt-2 col-md-6" data-aos="fade-up" data-aos-delay="400">
-                        <div class="service-item position-relative">
-                            <div class="icon">
-                                <i class="fa-solid fa-trowel-bricks"></i>
-                            </div>
-                            <h3>Asperiores Commodit</h3>
-                            <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores
-                                iure perferendis tempore et consequatur.</p>
-                            <a href="{{ route('front-end.shop') }}" class="btn-success mt-2 btn ">SHOP NOW<i class="ml-1 bi bi-arrow-right"></i></a>
-                        </div>
-                    </div><!-- End Service Item -->
-
-                    <div class="col-lg-4 mt-2 col-md-6" data-aos="fade-up" data-aos-delay="500">
-                        <div class="service-item position-relative">
-                            <div class="icon">
-                                <i class="fa-solid fa-helmet-safety"></i>
-                            </div>
-                            <h3>Velit Doloremque</h3>
-                            <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores
-                                iure perferendis tempore et consequatur.</p>
-                            <a href="{{ route('front-end.shop') }}" class="btn-success mt-2 btn ">SHOP NOW<i class="ml-1 bi bi-arrow-right"></i></a>
-                        </div>
-                    </div><!-- End Service Item -->
-
-                    <div class="col-lg-4 mt-2 col-md-6" data-aos="fade-up" data-aos-delay="600">
-                        <div class="service-item position-relative">
-                            <div class="icon">
-                                <i class="fa-solid fa-arrow-up-from-ground-water"></i>
-                            </div>
-                            <h3>Dolori Architecto</h3>
-                            <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores
-                                iure perferendis tempore et consequatur.</p>
-                            <a href="{{ route('front-end.shop') }}" class="btn-success mt-2 btn ">SHOP NOW<i class="ml-1 bi bi-arrow-right"></i></a>
-                        </div>
-                    </div><!-- End Service Item -->
-
+                        </div><!-- End Service Item -->
+                    @endforeach
                 </div>
-
             </div>
-
         </section>
     </main>
 </div>
