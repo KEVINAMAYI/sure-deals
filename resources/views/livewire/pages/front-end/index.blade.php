@@ -19,10 +19,9 @@ new #[Layout('layouts.front-end')] class extends Component {
             <div class="container">
                 <div class="banner_content row">
                     <div class="col-lg-12">
-                        <p class="sub text-uppercase">men Collection</p>
-                        <h3><span>Show</span> Your <br/>Personal <span>Style</span></h3>
-                        <h4>Fowl saw dry which a above together place.</h4>
-                        <a class="main_btn mt-40" href="#">View Collection</a>
+                        <p class="sub text-uppercase">SURE DEALS</p>
+                        <h3><span>One</span> Stop <br/>For All <span>Construction Materials</span></h3>
+                        <a class="main_btn mt-20" href="#">SHOP NOW</a>
                     </div>
                 </div>
             </div>
