@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Nette\Utils\Image;
 
 class Product extends Model
 {
@@ -17,7 +18,7 @@ class Product extends Model
 
 
     public function tags(){
-        return $this->belongsToMany(Tag::class,'product_tags');
+        return $this->belongsToMany(Tag::class,'product_tags','product_id');
     }
 
     public function deals(){
@@ -26,6 +27,6 @@ class Product extends Model
 
     public function images()
     {
-        return ProductImage::where('product_id', $this->id)->get();
+        return $this->hasMany(ProductImage::class,'product_id');
     }
 }

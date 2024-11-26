@@ -21,7 +21,7 @@ new #[Layout('layouts.dashboard')] class extends Component {
 
     public function getProducts()
     {
-        $this->products = Product::with('product_variations')->get();
+        $this->products = Product::with('images')->get();
     }
 
     #[On('delete-product')]
@@ -32,10 +32,10 @@ new #[Layout('layouts.dashboard')] class extends Component {
 
             $this->getProducts();
 
-            $product = ProductVariation::find($product_id);
+            $product = Product::find($product_id);
 
             if (!$product) {
-                throw new Exception("Category with ID $product_id not found.");
+                throw new Exception("Product with ID $product_id not found.");
             }
 
             $product->delete();
@@ -118,20 +118,17 @@ new #[Layout('layouts.dashboard')] class extends Component {
                                                 <th>Name</th>
                                                 <th>Description</th>
                                                 <th>Category</th>
-                                                <th>Variation</th>
                                                 <th>Price</th>
                                                 <th>Action</th>
                                             </tr>
                                             </thead>
                                             <tbody>
                                             @foreach($products as $product)
-                                                @foreach($product->product_variations as $product_variation)
                                                     <tr>
                                                         <td class="name-column">{{ strtoupper($product->name) }}</td>
                                                         <td class="description-column">{{ $product->description }}</td>
                                                         <td>{{ $product->category->name }}</td>
-                                                        <td class="variation-column " >{{ empty($product_variation->variation()) ? 'None' :  $product_variation->variation()->name.'-'.$product_variation->variation()->value }}</td>
-                                                        <td>{{ $product_variation->price }}</td>
+                                                        <td>{{ $product->price }}</td>
                                                         <td>
                                                             <div class="btn-group">
                                                                 <button type="button"
@@ -141,11 +138,11 @@ new #[Layout('layouts.dashboard')] class extends Component {
                                                                 </button>
                                                                 <div class="dropdown-menu">
                                                                     <a class="dropdown-item" wire:navigate
-                                                                       href="{{ route('dashboard.edit-product', $product_variation->id) }}">
+                                                                       href="{{ route('dashboard.edit-product', $product->id) }}">
                                                                         <i class="mdi mdi-pencil font-size-16"></i> Edit
                                                                     </a>
                                                                     <button class="dropdown-item deleteProduct"
-                                                                            data-id="{{ $product_variation->id }}">
+                                                                            data-id="{{ $product->id }}">
                                                                         <i class="mdi mdi-trash-can font-size-16"></i>
                                                                         Delete
                                                                     </button>
@@ -153,7 +150,6 @@ new #[Layout('layouts.dashboard')] class extends Component {
                                                             </div>
                                                         </td>
                                                     </tr>
-                                                @endforeach
                                             @endforeach
                                             </tbody>
                                         </table>

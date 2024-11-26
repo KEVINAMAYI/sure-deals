@@ -5,10 +5,10 @@ use Livewire\Volt\Component;
 
 new #[Layout('layouts.dashboard')] class extends Component {
 
-    public $product_variation_id;
+    public $product_id;
 
-    public function mount($product_variation_id){
-        $this->product_variation_id = $product_variation_id;
+    public function mount($product_id){
+        $this->product_id = $product_id;
     }
 
 
@@ -25,7 +25,7 @@ new #[Layout('layouts.dashboard')] class extends Component {
 
                     <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
                         <div class="max-w-xl">
-                            @livewire('forms.products.edit-product', ['product_variation_id' => $product_variation_id])
+                            @livewire('forms.products.edit-product', ['product_id' => $product_id])
                         </div>
                     </div>
 

@@ -2,6 +2,7 @@
 
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\ProductImage;
 use App\Models\ProductTag;
 use App\Models\ProductVariation;
 use App\Models\ProductVariationImage;
@@ -25,30 +26,26 @@ new class extends Component {
 
     public $name;
     public $price;
-    public $variations;
     public $category_id;
     public $description;
     public $selling_tags;
     public $selling_tags_ids = [];
-    public $variation_id;
-    public $product_variation;
+    public $product;
     public $images = [];
     public $discountVisible = false;
     public $discountPercentage;
     public $discountedPrice;
 
-    public function mount($product_variation_id)
+    public function mount($product_id)
     {
-        $this->product_variation = ProductVariation::find($product_variation_id);
-        $this->description = $this->product_variation->product->description;
-        $this->name = $this->product_variation->product->name;
-        $this->category_id = $this->product_variation->product->category_id;
-        $this->variation_id = $this->product_variation->variation_id;
-        $this->price = $this->product_variation->price;
-        $this->discountPercentage = $this->product_variation->discount_percentage;
-        $this->discountedPrice = !empty($this->product_variation->discount_price) ? $this->product_variation->discount_price : $this->product_variation->price;
+        $this->product = Product::find($product_id);
+        $this->description = $this->product->description;
+        $this->name = $this->product->name;
+        $this->category_id = $this->product->category_id;
+        $this->price = $this->product->price;
+        $this->discountPercentage = $this->product->discount_percentage;
+        $this->discountedPrice = !empty($this->product->discount_price) ? $this->product->discount_price : $this->product->price;
 
-        $this->variations = Variation::all();
         $this->selling_tags = Tag::all();
     }
 
@@ -59,7 +56,6 @@ new class extends Component {
             'name' => 'required',
             'description' => 'required',
             'price' => 'required',
-            'variation_id' => 'required',
             'category_id' => 'required',
             'images.*' => 'image',
         ];
@@ -99,16 +95,14 @@ new class extends Component {
             }
 
             $this->updateProduct();
-            $this->saveProductTags($this->product_variation->product);
+            $this->saveProductTags($this->product);
 
             //create product variation for the created product
-            $this->product_variation->update([
-                'product_id' => $this->product_variation->product->id,
-                'variation_id' => $this->variation_id,
+            $this->product->update([
+                'product_id' => $this->product->id,
                 'price' => $this->price,
                 'discount_percentage' => !empty($this->discountPercentage) ? $this->discountPercentage : 0,
                 'discounted_price' => !empty($this->discountedPrice) ? $this->discountedPrice : null
-
             ]);
 
 
@@ -118,16 +112,16 @@ new class extends Component {
                         // Generate a unique name for the image
                         $name = time() . '-' . $image->getClientOriginalName();
 
-                        // Store the image in the 'public/product_variation_images' directory using Livewire's storeAs method
-                        $path = $image->storeAs('product_variation_images', $name, 'public');
+                        // Store the image in the 'public/product' directory using Livewire's storeAs method
+                        $path = $image->storeAs('product_images', $name, 'public');
 
                         Log::info('File stored successfully at: ' . $path);
 
-                        ProductVariationImage::where('product_variation_id', $this->product_variation->id)->delete();
+                        ProductImage::where('product_id', $this->product->id)->delete();
 
                         // Store the image path in the database
-                        ProductVariationImage::create([
-                            'product_variation_id' => $this->product_variation->id,
+                        ProductImage::create([
+                            'product_id' => $this->product->id,
                             'image_url' => $path,
                         ]);
 
@@ -142,7 +136,7 @@ new class extends Component {
 
 
             DB::commit();
-            $this->reset(['category_id', 'name', 'description', 'variation_id', 'price', 'discountPercentage', 'images']);
+            $this->reset(['category_id', 'name', 'description', 'price', 'discountPercentage', 'images']);
             $this->alert('success', 'Product updated successfully');
             $this->dispatch('productUpdated');
 
@@ -159,7 +153,7 @@ new class extends Component {
      */
     public function updateProduct()
     {
-        $this->product_variation->product->update([
+        $this->product->update([
             'category_id' => $this->category_id,
             'name' => $this->name,
             'description' => $this->description,
@@ -175,31 +169,15 @@ new class extends Component {
     {
         if (!empty($this->selling_tags_ids)) {
 
-            ProductTag::where('product_id', $this->product_variation->product->id)->delete();
+            ProductTag::where('product_id', $this->product->id)->delete();
 
             foreach ($this->selling_tags_ids as $selling_tags_id) {
                 ProductTag::create([
-                    'product_id' => $this->product_variation->product->id,
+                    'product_id' => $this->product->id,
                     'tag_id' => $selling_tags_id
                 ]);
             }
         }
-    }
-
-
-    /**
-     * Gets Variations Based on Category
-     */
-    public function getCategoryVariations()
-    {
-        $category_slug = Category::where('id', $this->category_id)->first();
-
-        $this->variations = Variation::all();
-
-        if ($category_slug == 'grass_carpet') {
-            $this->variations = Variation::where('name', 'height')->get();
-        }
-
     }
 
 
@@ -252,29 +230,16 @@ new class extends Component {
                             @enderror                        </div>
                     </div>
                     <div class="row">
-                        <div class="mb-4 col-lg-6">
-                            <label for="variation_id" class="form-label">Variations</label>
-                            <select id="variation_id" wire:model="variation_id" class="form-select">
-                                <option>Select</option>
-                                @foreach($variations as $variation)
-                                    <option
-                                        value="{{ $variation->id }}">{{ $variation->name.'-'.$variation->value }}</option>
-                                @endforeach
-                            </select>
-                            @error('variation_id')
-                            <p class="text-danger text-xs pt-1"> {{ $message }} </p>
-                            @enderror                        </div>
-
-                        <div class="mb-4 col-lg-4">
-                            <label for="price" class="form-label">Old Price</label>
-                            <input class="form-control" wire:model="price" id="price" type="text"
+                        <div class="mb-4 col-lg-10">
+                            <label for="price" class="form-label">Price (KES)</label>
+                            <input class="form-control" wire:model="price" id="price" type="number"
                                    autocomplete="price">
                             @error('price')
                             <p class="text-danger text-xs pt-1"> {{ $message }} </p>
                             @enderror
                         </div>
                         <div style="padding-top:30px;" class="col-lg-2">
-                            <button type="button" class="btn btn-primary" wire:click="showDiscountInput">Edit Discount
+                            <button type="button" class="btn btn-primary" wire:click="showDiscountInput">Add Discount
                             </button>
                         </div>
                     </div>

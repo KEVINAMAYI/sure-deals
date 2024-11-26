@@ -27,13 +27,10 @@ new class extends Component {
     public $description;
     public $selling_tags;
     public $selling_tags_ids = [];
-    public $variation_id;
     public $images = [];
     public $discountVisible = false;
-    public $customVariationVisible = false;
     public $discountPercentage;
     public $discountedPrice;
-    public $customVariation;
 
     public function mount()
     {
@@ -47,7 +44,6 @@ new class extends Component {
             'name' => 'required',
             'description' => 'required',
             'price' => 'required',
-            'variation_id' => 'required',
             'category_id' => 'required',
             'images.*' => 'required|image',
         ];
@@ -173,20 +169,6 @@ new class extends Component {
     }
 
 
-    /**
-     * Gets Variations Based on Category
-     */
-    public function getCategoryVariations()
-    {
-        $category_slug = Category::where('id', $this->category_id)->first();
-
-        $this->variations = Variation::all();
-
-        if ($category_slug == 'grass_carpet') {
-            $this->variations = Variation::where('name', 'height')->get();
-        }
-
-    }
 
 
     #[On('update-selling-tag-ids')]
@@ -211,7 +193,7 @@ new class extends Component {
                     <div class="row">
                         <div class="mb-4 col-lg-6">
                             <label for="category_id" class="form-label">Category</label>
-                            <select id="category_id" wire:model="category_id" wire:change="getCategoryVariations"
+                            <select id="category_id" wire:model="category_id"
                                     class="form-select">
                                 <option>Select</option>
                                 @foreach($categories as $category)
