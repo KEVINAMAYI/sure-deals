@@ -1,36 +1,67 @@
 <?php
 
+use App\Models\CallBack;
 use App\Models\Carousel;
 use App\Models\Category;
 use App\Models\Deal;
 use App\Models\Product;
+use Illuminate\Support\Facades\DB;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Attributes\Layout;
 use Livewire\Volt\Component;
 
 new #[Layout('layouts.front-end')] class extends Component {
+
+    use LivewireAlert;
+
+    public $product;
+    public $first_name;
+    public $last_name;
+    public $phone_number;
+
+    public function rules()
+    {
+        return [
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'phone_number' => 'required',
+        ];
+    }
+
+    public function mount(Product $product)
+    {
+        $this->product = $product;
+    }
+
+    public function createCallBack()
+    {
+        $this->validate();
+
+        DB::beginTransaction();
+        try {
+            CallBack::create([
+                'first_name' => $this->first_name,
+                'last_name' => $this->last_name,
+                'phone_number' => $this->phone_number
+            ]);
+
+            $this->reset(['first_name', 'last_name', 'phone_number']);
+            $this->dispatch('close-modal');
+
+            DB::commit();
+            $this->alert('success', 'CallBack was requested Successfully');
+
+        } catch (Exception $exception) {
+            DB::rollBack();
+            $this->alert('error', 'CallBack request failed');
+        }
+
+    }
+
+
 } ?>
 <!--start page content-->
 <div class="page-content">
-    <!--================Home Banner Area =================-->
-    <section class="banner_area">
-        <div class="banner_inner d-flex align-items-center">
-            <div class="container">
-                <div
-                    class="banner_content d-md-flex justify-content-between align-items-center"
-                >
-                    <div class="mb-3 mb-md-0">
-                        <h2>Product Details</h2>
-                        <p>Very us move be blessed multiply night</p>
-                    </div>
-                    <div class="page_link">
-                        <a href="index.html">Home</a>
-                        <a href="single-product.html">Product Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--================End Home Banner Area =================-->
 
     <!--================Single Product Area =================-->
     <div class="product_image_area">
@@ -43,70 +74,38 @@ new #[Layout('layouts.front-end')] class extends Component {
                             class="carousel slide"
                             data-ride="carousel"
                         >
-                            <ol class="carousel-indicators">
-                                <li
-                                    data-target="#carouselExampleIndicators"
-                                    data-slide-to="0"
-                                    class="active"
-                                >
-                                    <img
-                                        src="front-end/img/product/single-product/s-product-s-2.jpg"
-                                        alt=""
-                                    />
-                                </li>
-                                <li
-                                    data-target="#carouselExampleIndicators"
-                                    data-slide-to="1"
-                                >
-                                    <img
-                                        src="front-end/img/product/single-product/s-product-s-3.jpg"
-                                        alt=""
-                                    />
-                                </li>
-                                <li
-                                    data-target="#carouselExampleIndicators"
-                                    data-slide-to="2"
-                                >
-                                    <img
-                                        src="front-end/img/product/single-product/s-product-s-4.jpg"
-                                        alt=""
-                                    />
-                                </li>
-                            </ol>
                             <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img
-                                        class="d-block w-100"
-                                        src="front-end/img/product/single-product/s-product-1.jpg"
-                                        alt="First slide"
-                                    />
-                                </div>
-                                <div class="carousel-item">
-                                    <img
-                                        class="d-block w-100"
-                                        src="front-end/img/product/single-product/s-product-1.jpg"
-                                        alt="Second slide"
-                                    />
-                                </div>
-                                <div class="carousel-item">
-                                    <img
-                                        class="d-block w-100"
-                                        src="front-end/img/product/single-product/s-product-1.jpg"
-                                        alt="Third slide"
-                                    />
-                                </div>
+                                @foreach($product->images as $index => $image)
+                                    <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
+                                        <img
+                                            class="d-block w-100"
+                                            src="{{ asset('storage/' . $image->image_url) }}"
+                                            alt="Slide {{ $index + 1 }}"
+                                        />
+                                    </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-5 offset-lg-1">
+                    @php
+                        $fullProductName = $product->name;
+                        $productDetailsUrl = route('front-end.product-details', $product->id);
+
+                        // Message text with product name and line break
+                        $whatsappMessage = 'Hello, I want to purchase: *' . $fullProductName . '*';
+
+                        // Append URL on a new line using %0A
+                        $whatsappMessage .= '. Here is the product link: ' . $productDetailsUrl;
+                    @endphp
                     <div class="s_product_text">
-                        <h3>Faded SkyBlu Denim Jeans</h3>
-                        <h2>$149.99</h2>
+                        <h3>{{ $product->name }}</h3>
+                        <h2>KES {{ $product->price }}</h2>
                         <ul class="list">
                             <li>
                                 <a class="active" href="#">
-                                    <span>Category</span> : Household</a
+                                    <span>Category</span> : {{ $product->category->name }}</a
                                 >
                             </li>
                             <li>
@@ -114,28 +113,30 @@ new #[Layout('layouts.front-end')] class extends Component {
                             </li>
                         </ul>
                         <p>
-                            Mill Oil is an innovative oil filled radiator with the most
-                            modern technology. If you are looking for something that can
-                            make your interior look awesome, and at the same time give you
-                            the pleasant warm feeling during the winter.
+                            {{ $product->description }}
                         </p>
                         <div style="margin-top:-20px; margin-bottom:20px;" class="review_box">
                             <div class="row total_rate">
                                 <div class="col-6">
-                                    <div style="text-align:center; background-color: rgb(246,246,246);" class="pt-2 pb-2 box_total">
+                                    <div style="text-align:center; background-color: rgb(246,246,246);"
+                                         class="pt-2 pb-2 box_total">
                                         <h5 style="font-size:20px;  font-weight:bold;">Overall Ratings</h5>
-                                        <h4 style="font-size:50px;  color:rgb(113,205,20); font-weight:bold;">4.0</h4>
+                                        <h4 style="font-size:50px;  color:rgb(113,205,20); font-weight:bold;">5.0</h4>
                                         <h6>(30 Reviews)</h6>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="card_area">
-                            <a class="main_btn" href="#">
+                            <a class="main_btn"
+                               target="_blank"
+                               href="https://api.whatsapp.com/send?phone=254791397770&text={{ urlencode($whatsappMessage) }}">
                                 <i class="fab fa-whatsapp"></i>
                                 Buy on Whatsapp
                             </a>
-                            <a class="main_btn" href="#">
+                            <a class="main_btn" style="background-color:#71CD14; color:white; cursor: pointer; "
+                               data-bs-toggle="modal"
+                               data-bs-target="#callBackModal">
                                 <i class="fas fa-phone"></i>
                                 Request CallBack
                             </a>
@@ -187,35 +188,7 @@ new #[Layout('layouts.front-end')] class extends Component {
                     role="tabpanel"
                     aria-labelledby="home-tab"
                 >
-                    <p>
-                        Beryl Cook is one of Britain’s most talented and amusing artists
-                        .Beryl’s pictures feature women of all shapes and sizes enjoying
-                        themselves .Born between the two world wars, Beryl Cook eventually
-                        left Kendrick School in Reading at the age of 15, where she went
-                        to secretarial school and then into an insurance office. After
-                        moving to London and then Hampton, she eventually married her next
-                        door neighbour from Reading, John Cook. He was an officer in the
-                        Merchant Navy and after he left the sea in 1956, they bought a pub
-                        for a year before John took a job in Southern Rhodesia with a
-                        motor company. Beryl bought their young son a box of watercolours,
-                        and when showing him how to use it, she decided that she herself
-                        quite enjoyed painting. John subsequently bought her a child’s
-                        painting set for her birthday and it was with this that she
-                        produced her first significant work, a half-length portrait of a
-                        dark-skinned lady with a vacant expression and large drooping
-                        breasts. It was aptly named ‘Hangover’ by Beryl’s husband and
-                    </p>
-                    <p>
-                        It is often frustrating to attempt to plan meals that are designed
-                        for one. Despite this fact, we are seeing more and more recipe
-                        books and Internet websites that are dedicated to the act of
-                        cooking for one. Divorce and the death of spouses or grown
-                        children leaving for college are all reasons that someone
-                        accustomed to cooking for more than one would suddenly need to
-                        learn how to adjust all the cooking practices utilized before into
-                        a streamlined plan of cooking that is more efficient for one
-                        person creating less
-                    </p>
+                    {{ $product->description }}
                 </div>
                 <div
                     class="tab-pane fade show active"
@@ -466,8 +439,70 @@ new #[Layout('layouts.front-end')] class extends Component {
             </div>
         </div>
     </section>
+
+    <div wire:ignore.self class="modal fade" id="callBackModal" tabindex="-1" aria-labelledby="callBackModalLabel"
+         aria-hidden="true">
+        <form wire:submit="createCallBack">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="callBackModalLabel">Request CallBack</h5>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-12">
+                                <div class="mb-3">
+                                    <label for="first_name" class="form-label">First Name</label>
+                                    <input type="text" id="first_name" class="form-control" wire:model="first_name">
+                                    @error('first_name')
+                                    <p class="text-danger text-xs pt-1"> {{ $message }} </p>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <div class="mb-3">
+                                    <label for="last_name" class="form-label">Last Name</label>
+                                    <input type="text" id="last_name" class="form-control" wire:model="last_name">
+                                    @error('last_name')
+                                    <p class="text-danger text-xs pt-1"> {{ $message }} </p>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="mb-3">
+                                    <label for="phone_number" class="form-label">Phone Number</label>
+                                    <input type="text" id="phone_number" class="form-control" wire:model="phone_number">
+                                    @error('phone_number')
+                                    <p class="text-danger text-xs pt-1"> {{ $message }} </p>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
     <!--================End Product Description Area =================-->
 </div>
+
+@push('scripts')
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+    <script>
+        window.addEventListener('close-modal', event => {
+            $('#callBackModal').modal('hide');
+            $('#sendEmailModal').modal('hide');
+            location.reload();
+        });
+    </script>
+@endpush
 <!--end page content-->
 
 

@@ -1,4 +1,3 @@
-
 <?php
 
 use App\Livewire\Actions\Logout;
@@ -28,7 +27,8 @@ new class extends Component {
                                     <img src="front-end-assets/images/gsm_logo_transparent.png" alt="" height="40">
                                 </span>
                     <span class="logo-lg">
-                                    <img src="front-end-assets/images/gsm_logo_transparent.png" alt="" height="40"> <span class="logo-txt">GSM</span>
+                                    <img src="front-end-assets/images/gsm_logo_transparent.png" alt=""
+                                         height="40"> <span class="logo-txt">SURE DEALS</span>
                                 </span>
                 </a>
 
@@ -37,7 +37,8 @@ new class extends Component {
                                     <img src="front-end-assets/images/gsm_logo_transparent.png" alt="" height="40">
                                 </span>
                     <span class="logo-lg">
-                                    <img src="front-end-assets/images/gsm_logo_transparent.png" alt="" height="40"> <span class="logo-txt">GSM</span>
+                                    <img src="front-end-assets/images/gsm_logo_transparent.png" alt=""
+                                         height="40"> <span class="logo-txt">SURE DEALS</span>
                                 </span>
                 </a>
             </div>
@@ -67,17 +68,21 @@ new class extends Component {
             </div>
 
             <div class="dropdown d-inline-block">
-                <button type="button" class="btn header-item bg-light-subtle border-start border-end" id="page-header-user-dropdown"
+                <button type="button" class="btn header-item bg-light-subtle border-start border-end"
+                        id="page-header-user-dropdown"
                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img class="rounded-circle" width="50" height="46" src="front-end-assets/images/gsm_logo_transparent.png"
-                         alt="GSM Logo">
+                    <img class="rounded-circle" width="50" height="46"
+                         src="front-end-assets/images/gsm_logo_transparent.png"
+                         alt="SURE DEALS">
                     <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                 </button>
                 <div class="dropdown-menu dropdown-menu-end">
                     <!-- item-->
-                    <a class="dropdown-item" href="{{ route('dashboard.profile') }}" wire:navigate><i class="mdi mdi mdi-face-man font-size-16 align-middle me-1"></i> Profile</a>
+                    <a class="dropdown-item" href="{{ route('dashboard.profile') }}" wire:navigate><i
+                            class="mdi mdi mdi-face-man font-size-16 align-middle me-1"></i> Profile</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" wire:click="logout" href="#"><i class="mdi mdi-logout font-size-16 align-middle me-1"></i> Logout</a>
+                    <a class="dropdown-item" wire:click="logout" href="#"><i
+                            class="mdi mdi-logout font-size-16 align-middle me-1"></i> Logout</a>
                 </div>
             </div>
 

@@ -110,13 +110,24 @@ new #[Layout('layouts.front-end')] class extends Component {
 
             <div class="row">
                 @forelse($latest_products as $product)
+                    @php
+                        $fullProductName = $product->name;
+                        $productDetailsUrl = route('front-end.product-details', $product->id);
+
+                        // Message text with product name and line break
+                        $whatsappMessage = 'Hello, I want to purchase: *' . $fullProductName . '*';
+
+                        // Append URL on a new line using %0A
+                        $whatsappMessage .= '. Here is the product link: ' . $productDetailsUrl;
+                    @endphp
                     <div class="col-lg-4 col-md-6">
                         <div class="single-product">
                             <div class="product-img">
                                 <img class="img-fluid w-100"
                                      src="{{ asset('storage/' . $product->images->first()->image_url) }}" alt=""/>
                                 <div class="p_icon">
-                                    <a href="#">
+                                    <a target="_blank"
+                                       href="https://api.whatsapp.com/send?phone=254791397770&text={{ urlencode($whatsappMessage) }}">
                                         <i class="fab fa-whatsapp"></i>
                                     </a>
                                     <a href="{{ route('front-end.product-details',$product->id) }}">
@@ -193,6 +204,16 @@ new #[Layout('layouts.front-end')] class extends Component {
                 <div class="col-lg-6 mt-5 mt-lg-0">
                     <div class="row">
                         @forelse($latest_products as $product)
+                            @php
+                                $fullProductName = $product->name;
+                                $productDetailsUrl = route('front-end.product-details', $product->id);
+
+                                // Message text with product name and line break
+                                $whatsappMessage = 'Hello, I want to purchase: *' . $fullProductName . '*';
+
+                                // Append URL on a new line using %0A
+                                $whatsappMessage .= '. Here is the product link: ' . $productDetailsUrl;
+                            @endphp
                             <div class="col-lg-6 col-md-6">
                                 <div class="single-product">
                                     <div class="product-img">
@@ -200,7 +221,8 @@ new #[Layout('layouts.front-end')] class extends Component {
                                              src="{{ asset('storage/' . $product->images->first()->image_url) }}"
                                              alt=""/>
                                         <div class="p_icon">
-                                            <a href="#">
+                                            <a target="_blank"
+                                               href="https://api.whatsapp.com/send?phone=254791397770&text={{ urlencode($whatsappMessage) }}">
                                                 <i class="fab fa-whatsapp"></i>
                                             </a>
                                             <a href="{{ route('front-end.product-details', $product->id) }}">
@@ -249,7 +271,7 @@ new #[Layout('layouts.front-end')] class extends Component {
                                 <img class="img-fluid w-100" src="{{ asset('storage/' . $category->image_url) }}"
                                      alt=""/>
                                 <div class="p_icon">
-                                    <a href="{{ route('front-end.shop') }}">
+                                    <a href="{{ route('front-end.shop',$category->id) }}">
                                         <i class="ti-shopping-cart"></i>
                                     </a>
                                 </div>

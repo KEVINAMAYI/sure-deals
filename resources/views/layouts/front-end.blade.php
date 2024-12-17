@@ -85,7 +85,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item submenu dropdown">
-                                    <a class="nav-link" href="{{ route('front-end.shop') }}">
+                                    <a class="nav-link" href="{{ route('front-end.shop',0) }}">
                                         Shop
                                     </a>
                                 </li>
@@ -225,6 +225,10 @@
 <script src="front-end/vendors/counter-up/jquery.counterup.js"></script>
 <script src="front-end/js/mail-script.js"></script>
 <script src="front-end/js/theme.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
 @stack('scripts')
+<x-livewire-alert::scripts/>
 </body>
 </html>

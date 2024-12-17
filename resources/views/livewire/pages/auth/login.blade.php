@@ -30,14 +30,14 @@ new #[Layout('layouts.guest')] class extends Component {
     <div class="w-100">
         <div class="d-flex flex-column h-100">
             <div class="mb-4 mb-md-5 text-center">
-                <a href="index.html" class="d-block auth-logo">
-                    <img width="100"  src="front-end-assets/images/gsm_logo_transparent.png"   alt="" height="90">
-                </a>
+{{--                <a href="index.html" class="d-block auth-logo">--}}
+{{--                    <img width="100"  src="front-end-assets/images/gsm_logo_transparent.png"   alt="" height="90">--}}
+{{--                </a>--}}
             </div>
             <div class="auth-content my-auto">
                 <div class="text-center">
                     <h5 class="mb-0">Welcome Back !</h5>
-                    <p class="text-muted mt-2">Sign in to continue to GSM Dashboard.</p>
+                    <p class="text-muted mt-2">Sign in to continue to SURE DEALS Dashboard.</p>
                 </div>
                 <form wire:submit="login">
                     <div class="mb-3">

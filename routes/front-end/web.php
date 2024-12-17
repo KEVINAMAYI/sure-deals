@@ -16,7 +16,7 @@ Route::name('front-end.')->group(function () {
     Volt::route('contact', 'pages.front-end.contact')
         ->name('contact');
 
-    Volt::route('product-details/{product_id}', 'pages.front-end.product-details')
+    Volt::route('product-details/{product}', 'pages.front-end.product-details')
         ->name('product-details');
 
     Volt::route('shop-grid/{category_id}/{product_id}', 'pages.front-end.shop-grid')
@@ -25,7 +25,7 @@ Route::name('front-end.')->group(function () {
     Volt::route('store', 'pages.front-end.store')
         ->name('store');
 
-    Volt::route('shop', 'pages.front-end.shop')
+    Volt::route('shop/{category_id}', 'pages.front-end.shop')
         ->name('shop');
 
     Volt::route('search', 'pages.front-end.search')

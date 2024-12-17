@@ -41,7 +41,8 @@ new #[Layout('layouts.front-end')] class extends Component {
                                 </div>
                                 <h3>{{ $category->name }}</h3>
                                 <p>{{ $category->description }}</p>
-                                <a href="{{ route('front-end.shop') }}" class="btn-success mt-2 btn ">SHOP NOW<i
+                                <a href="{{ route('front-end.shop',$category->id) }}" class="btn-success mt-2 btn ">SHOP
+                                    NOW<i
                                         class="ml-1 bi bi-arrow-right"></i></a>
                             </div>
                         </div><!-- End Service Item -->
