@@ -4,10 +4,44 @@ use App\Models\Carousel;
 use App\Models\Category;
 use App\Models\Deal;
 use App\Models\Product;
+use App\Models\User;
+use App\Notifications\Inquiry;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Attributes\Layout;
 use Livewire\Volt\Component;
 
 new #[Layout('layouts.front-end')] class extends Component {
+
+    use LivewireAlert;
+
+    public $name;
+    public $subject;
+    public $email;
+    public $content;
+
+
+    public function send_email()
+    {
+        $this->validate([
+            'name' => 'required|string',
+            'email' => 'required|email',
+            'subject' => 'required|string',
+            'content' => 'required|string'
+        ]);
+
+        try {
+
+            $user = User::where('email', 'kevinamayi20@gmail.com')->first();
+            $user->notify(new Inquiry($this->name, $this->email, $this->subject, $this->content));
+
+            $this->alert('success', 'Email was sent successfully');
+
+        } catch (Exception $exception) {
+            $this->alert('error', $exception->getMessage());
+        }
+
+    }
+
 } ?>
 
 @push('styles')
@@ -31,35 +65,50 @@ new #[Layout('layouts.front-end')] class extends Component {
                 <h2 class="contact-title">Get in Touch</h2>
             </div>
             <div class="col-lg-8 mb-4 mb-lg-0">
-                <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm"
+                <form class="form-contact contact_form" wire:submit="send_email" id="contactForm"
                       novalidate="novalidate">
                     <div class="row">
                         <div class="col-12">
                             <div class="form-group">
                                 <input style="border:1px solid green;" class="form-control" name="subject"
-                                       id="subject" type="text"
+                                       id="subject" wire:model="subject" type="text"
                                        placeholder="Enter Subject">
+                                @error('subject')
+                                <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <input style="border:1px solid green;" class="form-control" name="name" id="name"
                                        type="text"
+                                       wire:model="name"
                                        placeholder="Enter your name">
+                                @error('name')
+                                <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <input style="border:1px solid green;" class="form-control" name="email" id="email"
                                        type="email"
+                                       wire:model="email"
                                        placeholder="Enter email address">
+                                @error('email')
+                                <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-group">
                                     <textarea style="border:1px solid green;" class="form-control w-100" name="message"
                                               id="message" cols="30" rows="9"
+                                              wire:model="content"
                                               placeholder="Enter Message"></textarea>
+                                @error('content')
+                                <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                         </div>
                     </div>
@@ -67,7 +116,6 @@ new #[Layout('layouts.front-end')] class extends Component {
                         <button type="submit" class="main_btn">Send Message</button>
                     </div>
                 </form>
-
 
             </div>
 

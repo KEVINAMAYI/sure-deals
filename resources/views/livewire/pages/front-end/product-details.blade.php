@@ -6,6 +6,8 @@ use App\Models\Category;
 use App\Models\Deal;
 use App\Models\Product;
 use App\Models\Rating;
+use App\Models\User;
+use App\Notifications\Inquiry;
 use Illuminate\Support\Facades\DB;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Attributes\Layout;
@@ -21,16 +23,10 @@ new #[Layout('layouts.front-end')] class extends Component {
     public $last_name;
     public $phone_number;
     public $product_ratings;
-
-
-    public function rules()
-    {
-        return [
-            'first_name' => 'required',
-            'last_name' => 'required',
-            'phone_number' => 'required',
-        ];
-    }
+    public $name;
+    public $subject;
+    public $email;
+    public $content;
 
     public function mount(Product $product)
     {
@@ -48,7 +44,11 @@ new #[Layout('layouts.front-end')] class extends Component {
 
     public function createCallBack()
     {
-        $this->validate();
+        $this->validate([
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'phone_number' => 'required',
+        ]);
 
         DB::beginTransaction();
         try {
@@ -67,6 +67,29 @@ new #[Layout('layouts.front-end')] class extends Component {
         } catch (Exception $exception) {
             DB::rollBack();
             $this->alert('error', 'CallBack request failed');
+        }
+
+    }
+
+
+    public function send_email()
+    {
+        $this->validate([
+            'name' => 'required|string',
+            'email' => 'required|email',
+            'subject' => 'required|string',
+            'content' => 'required|string'
+        ]);
+
+        try {
+
+            $user = User::where('email', 'kevinamayi20@gmail.com')->first();
+            $user->notify(new Inquiry($this->name, $this->email, $this->subject, $this->content));
+
+            $this->alert('success', 'Email was sent successfully');
+
+        } catch (Exception $exception) {
+            $this->alert('error', $exception->getMessage());
         }
 
     }
@@ -161,7 +184,9 @@ new #[Layout('layouts.front-end')] class extends Component {
                                 <i class="bi bi-phone"></i>
                                 Request CallBack
                             </a>
-                            <a style="width: 45%;" class="mt-2 main_btn" href="#">
+                            <a style="background-color:#71CD14; color:white; cursor: pointer; " class="mt-2 main_btn"
+                               data-bs-toggle="modal"
+                               data-bs-target="#sendEmailModal">
                                 <i class="bi bi-envelope"></i>
                                 Send Email
                             </a>
@@ -326,13 +351,72 @@ new #[Layout('layouts.front-end')] class extends Component {
         </form>
     </div>
 
+    <div wire:ignore.self class="modal fade" id="sendEmailModal" tabindex="-1" aria-labelledby="sendEmailModalLabel"
+         aria-hidden="true">
+        <form wire:submit="send_email">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="sendEmailModalLabel">Send Email</h5>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12">
+                                <div class="mb-3">
+                                    <label for="first_name" class="form-label">Subject</label>
+                                    <input type="text" id="subject" class="form-control" wire:model="subject">
+                                    @error('subject')
+                                    <p class="text-danger text-xs pt-1"> {{ $message }} </p>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Name</label>
+                                    <input type="text" id="name" class="form-control" wire:model="name">
+                                    @error('name')
+                                    <p class="text-danger text-xs pt-1"> {{ $message }} </p>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" id="email" class="form-control" wire:model="email">
+                                    @error('email')
+                                    <p class="text-danger text-xs pt-1"> {{ $message }} </p>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-sm-12">
+                                <div class="mb-3">
+                                    <label for="content" class="form-label">Message</label>
+                                    <textarea rows="6" id="content" class="form-control"
+                                              wire:model="content"></textarea>
+                                    @error('email')
+                                    <p class="text-danger text-xs pt-1"> {{ $message }} </p>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
     <!--================End Product Description Area =================-->
 </div>
 
 @push('scripts')
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-            crossorigin="anonymous"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
     <script>
         window.addEventListener('close-modal', event => {
             $('#callBackModal').modal('hide');
