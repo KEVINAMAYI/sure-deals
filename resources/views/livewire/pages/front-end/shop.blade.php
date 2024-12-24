@@ -141,7 +141,7 @@ new #[Layout('layouts.front-end')] class extends Component {
                                                 src="{{ asset('storage/' . $product->images->first()->image_url) }}"
                                                 alt=""
                                             />
-                                            <div class="p_icon">
+                                            <div class="p_icon w-100">
                                                 <a target="_blank"
                                                    href="https://api.whatsapp.com/send?phone=254791397770&text={{ urlencode($whatsappMessage) }}">
                                                     <i class="fab fa-whatsapp"></i>

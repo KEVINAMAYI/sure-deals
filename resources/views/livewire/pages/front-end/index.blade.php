@@ -158,13 +158,13 @@ new #[Layout('layouts.front-end')] class extends Component {
     <!--================ Offer Area =================-->
     <section class="offer_area">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="offset-lg-4 col-lg-6 text-center">
+            <div class="row justify-content-start">
+                <div class="col-lg-6 text-start">
                     <div class="offer_content">
                         <h3 class="text-uppercase mb-40">Wonderful Deals</h3>
                         <h2 class="text-uppercase">UPTO 30% off</h2>
-                        <a href="#" class="main_btn mb-20 mt-5">Discover Now</a>
-                        <p>Limited Time Offer</p>
+                        <a href="{{ route('front-end.shop',0) }}" class="main_btn mb-20 mt-5">Discover Now</a>
+                        <p style="color:white;">Limited Time Offer</p>
                     </div>
                 </div>
             </div>

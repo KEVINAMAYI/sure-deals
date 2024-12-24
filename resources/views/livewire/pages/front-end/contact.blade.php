@@ -75,22 +75,27 @@ new #[Layout('layouts.front-end')] class extends Component {
                 <div class="media contact-info">
                     <span class="contact-info__icon"><i class="ti-home"></i></span>
                     <div class="media-body">
-                        <h3>Buttonwood, California.</h3>
-                        <p>Rosemead, CA 91770</p>
+                        <h3>Nairobi Industrial Area.</h3>
+                        <p>Enterprise road , Road A,off Enterprise road.</p>
                     </div>
                 </div>
                 <div class="media contact-info">
                     <span class="contact-info__icon"><i class="ti-tablet"></i></span>
                     <div class="media-body">
-                        <h3><a href="tel:454545654">00 (440) 9865 562</a></h3>
+                        <h3><a href="tel:254791397770">0791397770</a></h3>
+                        <h3><a href="tel:254719619551">0719619551</a></h3>
+                        <h3><a href="tel:254712199576">0712199576</a></h3>
+                        <h3><a href="tel:254700203468">0700203468</a></h3>
                         <p>Mon to Fri 9am to 6pm</p>
                     </div>
                 </div>
                 <div class="media contact-info">
                     <span class="contact-info__icon"><i class="ti-email"></i></span>
                     <div class="media-body">
-                        <h3><a href="mailto:support@colorlib.com">support@colorlib.com</a></h3>
-                        <p>Send us your query anytime!</p>
+                        <h3>
+                            <a href="mailto:Suredealsbuildingstoresltd@gmail.com">Suredealsbuildingstoresltd@gmail.com</a>
+                        </h3>
+                        <p>Send us your inquiry anytime!</p>
                     </div>
                 </div>
             </div>

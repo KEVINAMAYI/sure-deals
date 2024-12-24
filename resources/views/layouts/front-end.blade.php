@@ -137,34 +137,54 @@
 <footer class="footer-area section_gap">
     <div class="container">
         <div class="row">
-            <div class="col-lg-4 col-md-6 single-footer-widget">
+            <div class="col-lg-3 col-md-6 single-footer-widget">
                 <h4>Products Categories</h4>
                 <ul>
-                    <li><a href="#">Repair and Construction Materials</a></li>
-                    <li><a href="#">Waterproofing Chemicals and Admixtures</a></li>
-                    <li><a href="#">Flooring</a></li>
-                    <li><a href="#">Roofing</a></li>
+                    <li><a href="{{ route('front-end.shop',1) }}">Repair and Construction Materials</a></li>
+                    <li><a href="{{ route('front-end.shop',2) }}">Waterproofing Chemicals and Admixtures</a></li>
+                    <li><a href="{{ route('front-end.shop',3) }}">Flooring</a></li>
+                    <li><a href="{{ route('front-end.shop',4) }}">Roofing</a></li>
                 </ul>
             </div>
-            <div class="col-lg-4 col-md-6 single-footer-widget">
+            <div class="col-lg-3 col-md-6 single-footer-widget">
                 <h4>More Product Categories</h4>
                 <ul>
-                    <li><a href="#">Agricultural Equipment and Machinery</a></li>
-                    <li><a href="#">Hand tools and Construction Machineries</a></li>
-                    <li><a href="#">Industrial Safety Wears</a></li>
-                    <li><a href="#">Store Equipment</a></li>
+                    <li><a href="{{ route('front-end.shop',5) }}">Agricultural Equipment and Machinery</a></li>
+                    <li><a href="{{ route('front-end.shop',6) }}">Hand tools and Construction Machineries</a></li>
+                    <li><a href="{{ route('front-end.shop',7) }}">Industrial Safety Wears</a></li>
+                    <li><a href="{{ route('front-end.shop',8) }}">Store Equipment</a></li>
                 </ul>
             </div>
-            <div class="col-lg-4 col-md-6 single-footer-widget">
+            <div class="col-lg-3 col-md-6 single-footer-widget">
                 <h4>Quick Links</h4>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Shop</a></li>
-                    <li><a href="#">Store</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Testimonials</a></li>
+                    <li><a href="{{ route('front-end.index') }}">Home</a></li>
+                    <li><a href="{{ route('front-end.shop',0) }}">Shop</a></li>
+                    <li><a href="{{ route('front-end.store') }}">Store</a></li>
+                    <li><a href="{{ route('front-end.about-us') }}">About Us</a></li>
+                    <li><a href="{{ route('front-end.contact') }}">Contact Us</a></li>
+                    <li><a href="{{ route('front-end.testimonials') }}">Testimonials</a></li>
                 </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 single-footer-widget">
+                <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="400">
+                    <i class="bi bi-telephone-fill flex-shrink-0"></i>
+                    <div style="margin-left:20px;">
+                        <h4 style="margin-bottom:10px;"><a href="" class="stretched-link">Contact</a></h4>
+                        <p>0791397770</p>
+                        <p>0719619551</p>
+                        <p>0712199576</p>
+                        <p>0700203468</p>
+                    </div>
+                </div><!-- End Icon Box -->
+                <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="500">
+                    <i class="bi bi-crosshair flex-shrink-0"></i>
+                    <div style="margin-left:20px;">
+                        <h4><a href="" class="stretched-link">Business Location</a></h4>
+                        <p style="margin-top:-20px;">Nairobi Industrial Area , Enterprise road , Road A ,off Enterprise
+                            road.</p>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="footer-bottom row align-items-center">
