@@ -29,7 +29,8 @@
     <link rel="stylesheet" href="front-end/css/style.css"/>
     <link rel="stylesheet" href="front-end/css/responsive.css"/>
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="front-end/css/font-awesome.min.css" rel="stylesheet">
+
 
     @stack('styles')
 </head>
@@ -40,17 +41,18 @@
     <div class="top_menu">
         <div class="container">
             <div class="row">
-                <div class="col-lg-7">
-                    <div class="float-left">
-                        <p>Phone: +01 256 25 235</p>
-                        <p>email: info@eiser.com</p>
+                <div class="col-lg-10">
+                    <div style="font-weight:bold;" class="float-left">
+                        <p style="color:#61AF18;">Phone: 0791397770 | 07196195551 | 0712199576 |
+                            0700203468</p>
+                        <p style="color:#61AF18;">email: suredealsbuildingstoresltd@gmail.com</p>
                     </div>
                 </div>
-                <div class="col-lg-5">
+                <div class="col-lg-2">
                     <div class="float-right">
                         <ul class="right_side">
                             <li>
-                                <a href="contact.html">
+                                <a href="{{ route('front-end.contact') }}">
                                     Contact Us
                                 </a>
                             </li>
@@ -135,74 +137,47 @@
 <footer class="footer-area section_gap">
     <div class="container">
         <div class="row">
-            <div class="col-lg-2 col-md-6 single-footer-widget">
-                <h4>Top Products</h4>
+            <div class="col-lg-4 col-md-6 single-footer-widget">
+                <h4>Products Categories</h4>
                 <ul>
-                    <li><a href="#">Managed Website</a></li>
-                    <li><a href="#">Manage Reputation</a></li>
-                    <li><a href="#">Power Tools</a></li>
-                    <li><a href="#">Marketing Service</a></li>
-                </ul>
-            </div>
-            <div class="col-lg-2 col-md-6 single-footer-widget">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="#">Jobs</a></li>
-                    <li><a href="#">Brand Assets</a></li>
-                    <li><a href="#">Investor Relations</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                </ul>
-            </div>
-            <div class="col-lg-2 col-md-6 single-footer-widget">
-                <h4>Features</h4>
-                <ul>
-                    <li><a href="#">Jobs</a></li>
-                    <li><a href="#">Brand Assets</a></li>
-                    <li><a href="#">Investor Relations</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                </ul>
-            </div>
-            <div class="col-lg-2 col-md-6 single-footer-widget">
-                <h4>Resources</h4>
-                <ul>
-                    <li><a href="#">Guides</a></li>
-                    <li><a href="#">Research</a></li>
-                    <li><a href="#">Experts</a></li>
-                    <li><a href="#">Agencies</a></li>
+                    <li><a href="#">Repair and Construction Materials</a></li>
+                    <li><a href="#">Waterproofing Chemicals and Admixtures</a></li>
+                    <li><a href="#">Flooring</a></li>
+                    <li><a href="#">Roofing</a></li>
                 </ul>
             </div>
             <div class="col-lg-4 col-md-6 single-footer-widget">
-                <h4>Newsletter</h4>
-                <p>You can trust us. we only send promo offers,</p>
-                <div class="form-wrap" id="mc_embed_signup">
-                    <form target="_blank"
-                          action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
-                          method="get" class="form-inline">
-                        <input class="form-control" name="EMAIL" placeholder="Your Email Address"
-                               onfocus="this.placeholder = ''"
-                               onblur="this.placeholder = 'Your Email Address '" required="" type="email">
-                        <button class="click-btn btn btn-default">Subscribe</button>
-                        <div style="position: absolute; left: -5000px;">
-                            <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
-                        </div>
-
-                        <div class="info"></div>
-                    </form>
-                </div>
+                <h4>More Product Categories</h4>
+                <ul>
+                    <li><a href="#">Agricultural Equipment and Machinery</a></li>
+                    <li><a href="#">Hand tools and Construction Machineries</a></li>
+                    <li><a href="#">Industrial Safety Wears</a></li>
+                    <li><a href="#">Store Equipment</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4 col-md-6 single-footer-widget">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Store</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                </ul>
             </div>
         </div>
         <div class="footer-bottom row align-items-center">
             <p class="footer-text m-0 col-lg-8 col-md-12">
                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                 Copyright &copy;<script>document.write(new Date().getFullYear());</script>
-                All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a
-                    href="https://colorlib.com" target="_blank">Colorlib</a>
+                All rights reserved | This website is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a
+                    href="https://suredeals.co.ke" target="_blank">SURE DEALS</a>
                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
             <div class="col-lg-4 col-md-12 footer-social">
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-dribbble"></i></a>
-                <a href="#"><i class="fa fa-behance"></i></a>
+                <a href="#"><i class="bi bi-facebook"></i></a>
+                <a href="#"><i class="bi bi-twitter"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
             </div>
         </div>
     </div>

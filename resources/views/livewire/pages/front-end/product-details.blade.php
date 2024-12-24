@@ -5,9 +5,11 @@ use App\Models\Carousel;
 use App\Models\Category;
 use App\Models\Deal;
 use App\Models\Product;
+use App\Models\Rating;
 use Illuminate\Support\Facades\DB;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Attributes\Layout;
+use Livewire\Attributes\On;
 use Livewire\Volt\Component;
 
 new #[Layout('layouts.front-end')] class extends Component {
@@ -18,6 +20,8 @@ new #[Layout('layouts.front-end')] class extends Component {
     public $first_name;
     public $last_name;
     public $phone_number;
+    public $product_ratings;
+
 
     public function rules()
     {
@@ -31,6 +35,14 @@ new #[Layout('layouts.front-end')] class extends Component {
     public function mount(Product $product)
     {
         $this->product = $product;
+        $this->getRatingsData($product->id);
+
+    }
+
+    #[On('get-ratings')]
+    public function getRatingsData($product_id)
+    {
+        $this->product_ratings = Rating::where('product_id', $product_id)->get();
     }
 
     public function createCallBack()
@@ -60,6 +72,14 @@ new #[Layout('layouts.front-end')] class extends Component {
 
 
 } ?>
+
+@push('styles')
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+          integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous">
+    <link rel="stylesheet" href="front-end/css/main.css"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.css" rel="stylesheet">
+@endpush
+
 <!--start page content-->
 <div class="page-content">
 
@@ -131,17 +151,17 @@ new #[Layout('layouts.front-end')] class extends Component {
                             <a class="main_btn"
                                target="_blank"
                                href="https://api.whatsapp.com/send?phone=254791397770&text={{ urlencode($whatsappMessage) }}">
-                                <i class="fab fa-whatsapp"></i>
+                                <i class="bi bi-whatsapp"></i>
                                 Buy on Whatsapp
                             </a>
                             <a class="main_btn" style="background-color:#71CD14; color:white; cursor: pointer; "
                                data-bs-toggle="modal"
                                data-bs-target="#callBackModal">
-                                <i class="fas fa-phone"></i>
+                                <i class="bi bi-phone"></i>
                                 Request CallBack
                             </a>
                             <a style="width: 45%;" class="mt-2 main_btn" href="#">
-                                <i class="fas fa-envelope"></i>
+                                <i class="bi bi-envelope"></i>
                                 Send Email
                             </a>
                         </div>
@@ -206,234 +226,51 @@ new #[Layout('layouts.front-end')] class extends Component {
                                         <h6>(03 Reviews)</h6>
                                     </div>
                                 </div>
-                                <div class="col-6">
-                                    <div class="rating_list">
-                                        <h3>Based on 3 Reviews</h3>
-                                        <ul class="list">
-                                            <li>
-                                                <a href="#"
-                                                >5 Star
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i> 01</a
-                                                >
-                                            </li>
-                                            <li>
-                                                <a href="#"
-                                                >4 Star
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i> 01</a
-                                                >
-                                            </li>
-                                            <li>
-                                                <a href="#"
-                                                >3 Star
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i> 01</a
-                                                >
-                                            </li>
-                                            <li>
-                                                <a href="#"
-                                                >2 Star
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i> 01</a
-                                                >
-                                            </li>
-                                            <li>
-                                                <a href="#"
-                                                >1 Star
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i> 01</a
-                                                >
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
                             </div>
-                            <div class="review_list">
-                                <div class="review_item">
-                                    <div class="media">
-                                        <div class="d-flex">
-                                            <img
-                                                src="front-end/img/product/single-product/review-1.png"
-                                                alt=""
-                                            />
+                            <div class="mt-3 review_list">
+                                @foreach($product_ratings as $product_rating)
+                                    <div class="review_item">
+                                        <div class="media">
+                                            <div
+                                                style="padding-top:20px; color: white; border-radius:50%; text-align: center; background-color:{{ $product_rating->generateRandomColor() }}; width:65px; height:65px; font-size: 35px; font-weight:bold;">
+                                                {{ ucfirst(substr($product_rating->name, 0, 1)) }}
+                                            </div>
+                                            <div class="ml-3 media-body">
+                                                <h4>{{ ucfirst($product_rating->name) }}</h4>
+                                                @if($product_rating->ratings == '1')
+                                                    <i class="fa fa-star"></i>
+                                                @elseif($product_rating->ratings == '2')
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                @elseif($product_rating->ratings == '3')
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                @elseif($product_rating->ratings == '4')
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                @elseif($product_rating->ratings == '5')
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                @endif
+                                            </div>
                                         </div>
-                                        <div class="media-body">
-                                            <h4>Blake Ruiz</h4>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
+                                        <p>
+                                            {{ $product_rating->comments }}
+                                        </p>
                                     </div>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                        sed do eiusmod tempor incididunt ut labore et dolore magna
-                                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                        ullamco laboris nisi ut aliquip ex ea commodo
-                                    </p>
-                                </div>
-                                <div class="review_item">
-                                    <div class="media">
-                                        <div class="d-flex">
-                                            <img
-                                                src="front-end/img/product/single-product/review-2.png"
-                                                alt=""
-                                            />
-                                        </div>
-                                        <div class="media-body">
-                                            <h4>Blake Ruiz</h4>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
-                                    </div>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                        sed do eiusmod tempor incididunt ut labore et dolore magna
-                                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                        ullamco laboris nisi ut aliquip ex ea commodo
-                                    </p>
-                                </div>
-                                <div class="review_item">
-                                    <div class="media">
-                                        <div class="d-flex">
-                                            <img
-                                                src="front-end/img/product/single-product/review-3.png"
-                                                alt=""
-                                            />
-                                        </div>
-                                        <div class="media-body">
-                                            <h4>Blake Ruiz</h4>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
-                                    </div>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                        sed do eiusmod tempor incididunt ut labore et dolore magna
-                                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                        ullamco laboris nisi ut aliquip ex ea commodo
-                                    </p>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
-                        <div class="col-lg-6">
-                            <div class="review_box">
-                                <h4>Add a Review</h4>
-                                <p>Your Rating:</p>
-                                <ul class="list">
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-star"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-star"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-star"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-star"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-star"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                                <p>Outstanding</p>
-                                <form
-                                    class="row contact_form"
-                                    action="contact_process.php"
-                                    method="post"
-                                    id="contactForm"
-                                    novalidate="novalidate"
-                                >
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <input
-                                                type="text"
-                                                class="form-control"
-                                                id="name"
-                                                name="name"
-                                                placeholder="Your Full name"
-                                            />
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <input
-                                                type="email"
-                                                class="form-control"
-                                                id="email"
-                                                name="email"
-                                                placeholder="Email Address"
-                                            />
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <input
-                                                type="text"
-                                                class="form-control"
-                                                id="number"
-                                                name="number"
-                                                placeholder="Phone Number"
-                                            />
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                        <textarea
-                            class="form-control"
-                            name="message"
-                            id="message"
-                            rows="5"
-                            placeholder="Comments"
-                        ></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 text-right">
-                                        <button
-                                            type="submit"
-                                            value="submit"
-                                            class="btn submit_btn"
-                                        >
-                                            Submit Now
-                                        </button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
+
+                        @livewire('pages.front-end.components.create-ratings', ['product_id' =>
+                        $product->id])
+
                     </div>
                 </div>
             </div>

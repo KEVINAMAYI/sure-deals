@@ -40,7 +40,7 @@ new #[Layout('layouts.front-end')] class extends Component {
                     <div class="col-lg-12">
                         <p class="sub text-uppercase">SURE DEALS</p>
                         <h3><span>One</span> Stop <br/>For All <span>Construction Materials</span></h3>
-                        <a class="main_btn mt-20" href="#">SHOP NOW</a>
+                        <a class="main_btn mt-20" href="{{ route('front-end.shop',0 ) ?? 'N/A'  }}">SHOP NOW</a>
                     </div>
                 </div>
             </div>
@@ -125,7 +125,7 @@ new #[Layout('layouts.front-end')] class extends Component {
                             <div class="product-img">
                                 <img class="img-fluid w-100"
                                      src="{{ asset('storage/' . $product->images->first()->image_url) }}" alt=""/>
-                                <div class="p_icon">
+                                <div class="p_icon w-100">
                                     <a target="_blank"
                                        href="https://api.whatsapp.com/send?phone=254791397770&text={{ urlencode($whatsappMessage) }}">
                                         <i class="fab fa-whatsapp"></i>
@@ -196,7 +196,7 @@ new #[Layout('layouts.front-end')] class extends Component {
                                  alt=""/>
                         </div>
                         <h4>KES {{ $latest_products->first()?->price ?? 'N/A'  }}</h4>
-                        <a href="{{ route('front-end.shop',$latest_products->first()?->id ) ?? 'N/A'  }}"
+                        <a href="{{ route('front-end.shop',0 ) ?? 'N/A'  }}"
                            class="main_btn">SHOP NOW</a>
                     </div>
                 </div>
@@ -220,7 +220,7 @@ new #[Layout('layouts.front-end')] class extends Component {
                                         <img class="img-fluid w-100"
                                              src="{{ asset('storage/' . $product->images->first()->image_url) }}"
                                              alt=""/>
-                                        <div class="p_icon">
+                                        <div class="p_icon w-100">
                                             <a target="_blank"
                                                href="https://api.whatsapp.com/send?phone=254791397770&text={{ urlencode($whatsappMessage) }}">
                                                 <i class="fab fa-whatsapp"></i>
@@ -271,7 +271,7 @@ new #[Layout('layouts.front-end')] class extends Component {
                                 <img class="img-fluid w-100" src="{{ asset('storage/' . $category->image_url) }}"
                                      alt=""/>
                                 <div class="p_icon">
-                                    <a href="{{ route('front-end.shop',$category->id) }}">
+                                    <a href="{{ route('front-end.shop',$category->id ?? 0) }}">
                                         <i class="ti-shopping-cart"></i>
                                     </a>
                                 </div>
