@@ -98,7 +98,7 @@ new class extends Component {
                     </div>
                     <div class="row">
                         <div class="mb-4 col-lg-12">
-                            <label for="description" class="form-label">Job Description</label>
+                            <label for="description" class="form-label">Description</label>
                             <textarea style="width:100%" wire:model="description" id="" cols="50" rows="5"></textarea>
                             @error('description')
                             <p class="text-danger text-xs pt-1"> {{ $message }} </p>
