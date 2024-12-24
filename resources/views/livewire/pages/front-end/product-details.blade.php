@@ -42,7 +42,8 @@ new #[Layout('layouts.front-end')] class extends Component {
     #[On('get-ratings')]
     public function getRatingsData($product_id)
     {
-        $this->product_ratings = Rating::where('product_id', $product_id)->get();
+        $this->product_ratings = Rating::where('product_id', $product_id)
+            ->where('status', 'approved')->get();
     }
 
     public function createCallBack()

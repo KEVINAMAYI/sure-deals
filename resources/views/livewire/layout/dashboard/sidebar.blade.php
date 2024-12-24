@@ -156,6 +156,20 @@ new class extends Component {
                 </li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow">
+                        <i data-feather="user"></i>
+                        <span data-key="t-apps">Comments</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li>
+                            <a wire:navigate href="{{ route('dashboard.list-comments') }}">
+                                <i data-feather="list"></i>
+                                <span data-key="t-calendar">List Comments</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow">
                         <i data-feather="user-plus"></i>
                         <span data-key="t-apps">Roles</span>
                     </a>

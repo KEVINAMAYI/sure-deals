@@ -13,7 +13,7 @@
     <!-- Scripts -->
     @vite('resources/css/front-end.css')
 
-    <title>Eiser ecommerce</title>
+    <title>SURE DEALS</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="front-end/css/bootstrap.css"/>
     <link rel="stylesheet" href="front-end/vendors/linericon/style.css"/>

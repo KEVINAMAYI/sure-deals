@@ -69,6 +69,9 @@ Route::middleware(['auth', 'verified'])->prefix('dashboard')->name('dashboard.')
     Volt::route('list-callbacks', 'pages.dashboard.callbacks.list-callbacks')
         ->name('list-callbacks');
 
+    Volt::route('list-comments', 'pages.dashboard.comments.list-comments')
+        ->name('list-comments');
+
 
     /**
      * Roles Routes
