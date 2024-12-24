@@ -408,7 +408,6 @@ new #[Layout('layouts.front-end')] class extends Component {
             </div>
         </form>
     </div>
-
     <!--================End Product Description Area =================-->
 </div>
 
