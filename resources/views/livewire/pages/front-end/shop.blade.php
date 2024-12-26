@@ -43,6 +43,7 @@ new #[Layout('layouts.front-end')] class extends Component {
         // Check if category_id is not 0
         if ($category_id != 0 && $category_id !== null) {
             $query->where('category_id', $category_id); // Filter by category_id
+            $this->selectedCategory = Category::find($category_id)->name;
         }
 
         // Check if search exists
