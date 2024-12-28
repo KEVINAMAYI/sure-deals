@@ -94,7 +94,7 @@ new class extends Component {
         </div>
         <div class="card-body p-4">
             <div class="row">
-                <form wire:submit="updateStaff" class="mt-6 space-y-6">
+                <form wire:submit.prevent="updateStaff" class="mt-6 space-y-6">
                     <div class="row">
                         <div class="mb-4 col-lg-6">
                             <label for="first_name" class="form-label">First Name</label>
@@ -155,7 +155,6 @@ new class extends Component {
                     </div>
                     <button type="submit" class="btn btn-outline-secondary waves-effect">
                         <span wire:loading.remove>Update Staff</span>
-                        <span wire:loading>Loading...</span>
                     </button>
                 </form>
             </div>

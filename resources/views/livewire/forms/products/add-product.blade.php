@@ -189,7 +189,7 @@ new class extends Component {
         </div>
         <div class="card-body p-4">
             <div class="row">
-                <form wire:submit="createProductWithVariations" class="mt-6 space-y-6">
+                <form wire:submit.prevent="createProductWithVariations" class="mt-6 space-y-6">
                     <div class="row">
                         <div class="mb-4 col-lg-6">
                             <label for="category_id" class="form-label">Category</label>
@@ -269,8 +269,7 @@ new class extends Component {
                         </div>
                     </div>
                     <button type="submit" class="btn btn-outline-secondary waves-effect">
-                        <span wire:loading.remove>Add Product</span>
-                        <span wire:loading>Loading...</span>
+                        <span>Add Product</span>
                     </button>
                 </form>
             </div>

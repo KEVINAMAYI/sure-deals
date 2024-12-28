@@ -111,14 +111,20 @@ new #[Layout('layouts.front-end')] class extends Component {
             <div class="row">
                 @forelse($latest_products as $product)
                     @php
-                        $fullProductName = $product->name;
-                        $productDetailsUrl = route('front-end.product-details', $product->id);
+                        $originalPrice = 0;
 
-                        // Message text with product name and line break
-                        $whatsappMessage = 'Hello, I want to purchase: *' . $fullProductName . '*';
+                         if ($product->discount_percentage != 0){
+                           $originalPrice = round($product->price * 100 /(100 - $product->discount_percentage),0);
+                         }
 
-                        // Append URL on a new line using %0A
-                        $whatsappMessage .= '. Here is the product link: ' . $productDetailsUrl;
+                           $fullProductName = $product->name;
+                           $productDetailsUrl = route('front-end.product-details', $product->id);
+
+                           // Message text with product name and line break
+                           $whatsappMessage = 'Hello, I want to purchase: *' . $fullProductName . '*';
+
+                           // Append URL on a new line using %0A
+                           $whatsappMessage .= '. Here is the product link: ' . $productDetailsUrl;
                     @endphp
                     <div class="col-lg-4 col-md-6">
                         <div class="single-product">
@@ -141,7 +147,9 @@ new #[Layout('layouts.front-end')] class extends Component {
                                 </a>
                                 <div class="mt-3">
                                     <span class="mr-4">KES {{ $product->price }}</span>
-                                    {{--                                    <del>$35.00</del>--}}
+                                    @if($originalPrice != 0)
+                                        <del>KES {{ $originalPrice }}</del>
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -205,6 +213,11 @@ new #[Layout('layouts.front-end')] class extends Component {
                     <div class="row">
                         @forelse($latest_products as $product)
                             @php
+                                $originalPrice = 0;
+                                if ($product->discount_percentage != 0){
+                                  $originalPrice = round($product->price * 100 /(100 - $product->discount_percentage),0);
+                                }
+
                                 $fullProductName = $product->name;
                                 $productDetailsUrl = route('front-end.product-details', $product->id);
 
@@ -236,7 +249,9 @@ new #[Layout('layouts.front-end')] class extends Component {
                                         </a>
                                         <div class="mt-3">
                                             <span class="mr-4">KES {{ $product->price }}</span>
-                                            {{--                                            <del>$35.00</del>--}}
+                                            @if($originalPrice != 0)
+                                                <del>KES {{ $originalPrice }}</del>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
