@@ -22,10 +22,10 @@ class Inquiry extends Notification implements ShouldQueue
      */
     public function __construct($sender_name, $sender_email, $subject, $content)
     {
-        $this->subject = $sender_name;
-        $this->subject = $sender_email;
+        $this->sender_name = $sender_name;
+        $this->sender_email = $sender_email;
         $this->subject = $subject;
-        $this->subject = $content;
+        $this->content = $content;
     }
 
     /**
