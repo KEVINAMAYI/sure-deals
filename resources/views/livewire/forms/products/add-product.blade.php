@@ -260,7 +260,7 @@ new class extends Component {
                     <div class="row">
                         <div class="mb-4 col-lg-12">
                             <label for="images" class="form-label">Images</label>
-                            <input accept="image/*" required class="form-control" wire:model="images" id="images"
+                            <input  required class="form-control" wire:model="images" id="images"
                                    type="file"
                                    autocomplete="images" multiple>
                             @error('images.*')
