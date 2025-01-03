@@ -292,9 +292,9 @@ new #[Layout('layouts.front-end')] class extends Component {
                             <div class="col-lg-6 col-md-6">
                                 <div class="single-product">
                                     <div class="product-img">
-                                        <img class="img-fluid w-100"
-                                             src="{{ asset('storage/' . $product->images->first()->image_url) }}"
-                                             alt=""/>
+                                        <img class="img-fluid"
+                                             src="{{ asset('storage/' . ($latest_products->first()?->images->first()?->image_url ?? 'placeholder.jpg')) }}"
+                                             alt="Product Image"/>
                                         <div class="p_icon w-100">
                                             <a target="_blank"
                                                href="https://api.whatsapp.com/send?phone=254791397770&text={{ urlencode($whatsappMessage) }}">
