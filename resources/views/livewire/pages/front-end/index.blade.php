@@ -194,9 +194,9 @@ new #[Layout('layouts.front-end')] class extends Component {
                     <div class="col-lg-4 col-md-6">
                         <div class="single-product">
                             <div class="product-img">
-                                <img class="img-fluid w-100"
+                                <img class="img-fluid"
                                      src="{{ asset('storage/' . ($latest_products->first()?->images->first()?->image_url ?? 'placeholder.jpg')) }}"
-                                     alt=""/>
+                                     alt="Product Image"/>
                                 <div class="p_icon w-100">
                                     <a target="_blank"
                                        href="https://api.whatsapp.com/send?phone=254791397770&text={{ urlencode($whatsappMessage) }}">
@@ -227,7 +227,6 @@ new #[Layout('layouts.front-end')] class extends Component {
         </div>
     </section>
 
-    <!--================ Offer Area =================-->
     <section class="offer_area">
         <div class="container">
             <div class="row justify-content-start">
@@ -242,7 +241,6 @@ new #[Layout('layouts.front-end')] class extends Component {
             </div>
         </div>
     </section>
-    <!--================ End Offer Area =================-->
 
     <!--================ New Product Area =================-->
     <section class="new_product_area section_gap_top section_gap_bottom_custom">
