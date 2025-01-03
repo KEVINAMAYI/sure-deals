@@ -12,6 +12,7 @@ Route::middleware(['auth', 'verified'])->prefix('dashboard')->name('dashboard.')
 
     Route::get('/storage-link', function () {
         Artisan::call('storage:link');
+        return 'Storage Link set successfully!';
     })->name('storage-link');
 
     Route::get('/refresh-db', function () {
@@ -24,6 +25,7 @@ Route::middleware(['auth', 'verified'])->prefix('dashboard')->name('dashboard.')
         Artisan::call('route:clear');
         Artisan::call('view:clear');
         Artisan::call('cache:clear');
+        return 'Cache cleared successfully!';
     });
 
 });
