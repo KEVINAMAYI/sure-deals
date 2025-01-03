@@ -21,7 +21,7 @@ class CategorySeeder extends Seeder
                 'slug' => 'repair',
                 'icon' => 'fa-mountain-city',
                 'color' => 'green',
-                'image_url' => 'front-end-assets/images/categories/artificial_grass_carpets.png',
+                'image_url' => 'categories/repair.png',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
 
@@ -32,7 +32,7 @@ class CategorySeeder extends Seeder
                 'slug' => 'waterproofing',
                 'icon' => 'fa-arrow-up-from-ground-water',
                 'color' => 'pink',
-                'image_url' => 'front-end-assets/images/categories/wall_to_wall_carpets.png',
+                'image_url' => 'categories/waterproof.jpg',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
@@ -42,7 +42,7 @@ class CategorySeeder extends Seeder
                 'slug' => 'flooring',
                 'icon' => 'fa-trowel-bricks',
                 'color' => 'skyblue',
-                'image_url' => 'front-end-assets/images/categories/curtain_rods_and_rails.png',
+                'image_url' => 'categories/flooring.jpg',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
@@ -52,7 +52,7 @@ class CategorySeeder extends Seeder
                 'slug' => 'roofing',
                 'icon' => 'fa-helmet-safety',
                 'color' => 'purple',
-                'image_url' => 'front-end-assets/images/categories/wall_decor.png',
+                'image_url' => 'categories/roofing.jpg',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
@@ -62,7 +62,7 @@ class CategorySeeder extends Seeder
                 'slug' => 'agricultural_equipment',
                 'icon' => 'fa-magic',
                 'color' => 'yellow',
-                'image_url' => 'front-end-assets/images/categories/artificial_flowers.png',
+                'image_url' => 'categories/agriculture.jpg',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
@@ -72,7 +72,7 @@ class CategorySeeder extends Seeder
                 'slug' => 'office_blinds',
                 'icon' => 'fa-compass-drafting',
                 'color' => 'danger',
-                'image_url' => 'front-end-assets/images/categories/office_blinds.png',
+                'image_url' => 'categories/hand-tools.jpg',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
@@ -82,7 +82,7 @@ class CategorySeeder extends Seeder
                 'slug' => 'industrial_safetywears',
                 'icon' => 'fa-building',
                 'color' => 'dark',
-                'image_url' => 'front-end-assets/images/categories/anti_slip_mats.png',
+                'image_url' => 'categories/safety-wear.jpg',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
@@ -92,7 +92,7 @@ class CategorySeeder extends Seeder
                 'slug' => 'store_equipment',
                 'icon' => 'fa-archive',
                 'color' => 'dark',
-                'image_url' => 'front-end-assets/images/categories/anti_slip_mats.png',
+                'image_url' => 'categories/store.jpg',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ]

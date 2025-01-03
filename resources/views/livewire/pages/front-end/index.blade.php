@@ -285,7 +285,7 @@ new #[Layout('layouts.front-end')] class extends Component {
                             <div class="product-img">
                                 <img class="img-fluid w-100" src="{{ asset('storage/' . $category->image_url) }}"
                                      alt=""/>
-                                <div class="p_icon">
+                                <div class="p_icon w-100">
                                     <a href="{{ route('front-end.shop',$category->id ?? 0) }}">
                                         <i class="ti-shopping-cart"></i>
                                     </a>
