@@ -96,7 +96,6 @@ new #[Layout('layouts.front-end')] class extends Component {
     </section>
     <!-- End feature Area -->
 
-    <!--================ Feature Product Area =================-->
     <section class="feature_product_area section_gap_bottom_custom">
         <div class="container">
             <div class="row justify-content-center">
@@ -109,7 +108,7 @@ new #[Layout('layouts.front-end')] class extends Component {
             </div>
 
             <div class="row">
-                @forelse($latest_products as $product)
+                @forelse($featured_products as $product)
                     @php
                         $originalPrice = 0;
 
@@ -130,7 +129,8 @@ new #[Layout('layouts.front-end')] class extends Component {
                         <div class="single-product">
                             <div class="product-img">
                                 <img class="img-fluid w-100"
-                                     src="{{ asset('storage/' . $product->images->first()->image_url) }}" alt=""/>
+                                     src="{{ asset('storage/' . ($latest_products->first()?->images->first()?->image_url ?? 'placeholder.jpg')) }}"
+                                     alt=""/>
                                 <div class="p_icon w-100">
                                     <a target="_blank"
                                        href="https://api.whatsapp.com/send?phone=254791397770&text={{ urlencode($whatsappMessage) }}">
@@ -161,7 +161,71 @@ new #[Layout('layouts.front-end')] class extends Component {
             </div>
         </div>
     </section>
-    <!--================ End Feature Product Area =================-->
+
+    <section class="feature_product_area section_gap_bottom_custom">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <div class="main_title">
+                        <h2><span>Latest product</span></h2>
+                        <p>Latest Products</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                @forelse($latest_products as $product)
+                    @php
+                        $originalPrice = 0;
+
+                         if ($product->discount_percentage != 0){
+                           $originalPrice = round($product->price * 100 /(100 - $product->discount_percentage),0);
+                         }
+
+                           $fullProductName = $product->name;
+                           $productDetailsUrl = route('front-end.product-details', $product->id);
+
+                           // Message text with product name and line break
+                           $whatsappMessage = 'Hello, I want to purchase: *' . $fullProductName . '*';
+
+                           // Append URL on a new line using %0A
+                           $whatsappMessage .= '. Here is the product link: ' . $productDetailsUrl;
+                    @endphp
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-product">
+                            <div class="product-img">
+                                <img class="img-fluid w-100"
+                                     src="{{ asset('storage/' . ($latest_products->first()?->images->first()?->image_url ?? 'placeholder.jpg')) }}"
+                                     alt=""/>
+                                <div class="p_icon w-100">
+                                    <a target="_blank"
+                                       href="https://api.whatsapp.com/send?phone=254791397770&text={{ urlencode($whatsappMessage) }}">
+                                        <i class="fab fa-whatsapp"></i>
+                                    </a>
+                                    <a href="{{ route('front-end.product-details',$product->id) }}">
+                                        <i class="ti-shopping-cart"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="product-btm">
+                                <a href="#" class="d-block">
+                                    <h4>{{ $product->name }}</h4>
+                                </a>
+                                <div class="mt-3">
+                                    <span class="mr-4">KES {{ $product->price }}</span>
+                                    @if($originalPrice != 0)
+                                        <del>KES {{ $originalPrice }}</del>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @empty
+                    <p style="text-align:center"> No Latest Products Found</p>
+                @endforelse
+            </div>
+        </div>
+    </section>
 
     <!--================ Offer Area =================-->
     <section class="offer_area">
