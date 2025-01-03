@@ -248,7 +248,6 @@ new #[Layout('layouts.front-end')] class extends Component {
                 <div class="col-lg-12">
                     <div class="main_title">
                         <h2><span>new products</span></h2>
-                        <p>Bring called seed first of third give itself now ment</p>
                     </div>
                 </div>
             </div>
@@ -292,7 +291,7 @@ new #[Layout('layouts.front-end')] class extends Component {
                                 <div class="single-product">
                                     <div class="product-img">
                                         <img class="img-fluid"
-                                             src="{{ asset('storage/' . ($latest_products->first()?->images->first()?->image_url ?? 'placeholder.jpg')) }}"
+                                             src="{{ asset('storage/' . ($product->images->first()?->image_url ?? 'placeholder.jpg')) }}"
                                              alt="Product Image"/>
                                         <div class="p_icon w-100">
                                             <a target="_blank"
