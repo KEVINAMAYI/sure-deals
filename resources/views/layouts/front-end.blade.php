@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="front-end/css/responsive.css"/>
 
     <link href="front-end/css/font-awesome.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
 
     @stack('styles')
