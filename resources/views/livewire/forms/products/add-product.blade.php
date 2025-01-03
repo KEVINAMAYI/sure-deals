@@ -34,7 +34,7 @@ new class extends Component {
 
     public function mount()
     {
-        $this->selling_tags = Tag::all();
+        $this->selling_tags = Tag::where('name', 'Latest Products')->orWhere('name', 'Featured Products')->get();
     }
 
 
@@ -55,7 +55,6 @@ new class extends Component {
             'categories' => Category::all()
         ];
     }
-
 
 
     public function showDiscountInput()
@@ -169,8 +168,6 @@ new class extends Component {
     }
 
 
-
-
     #[On('update-selling-tag-ids')]
     public function updateSellingTagIds($selling_tags_ids)
     {
@@ -260,7 +257,7 @@ new class extends Component {
                     <div class="row">
                         <div class="mb-4 col-lg-12">
                             <label for="images" class="form-label">Images</label>
-                            <input  required class="form-control" wire:model="images" id="images"
+                            <input required class="form-control" wire:model="images" id="images"
                                    type="file"
                                    autocomplete="images" multiple>
                             @error('images.*')
