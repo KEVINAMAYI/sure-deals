@@ -9,6 +9,7 @@ require __DIR__ . '/front-end/web.php';
 require __DIR__ . '/dashboard/web.php';
 
 Route::middleware(['auth', 'verified'])->prefix('dashboard')->name('dashboard.')->group(function () {
+
     Route::get('/storage-link', function () {
         Artisan::call('storage:link');
     })->name('storage-link');
@@ -24,4 +25,5 @@ Route::middleware(['auth', 'verified'])->prefix('dashboard')->name('dashboard.')
         Artisan::call('view:clear');
         Artisan::call('cache:clear');
     });
+
 });
