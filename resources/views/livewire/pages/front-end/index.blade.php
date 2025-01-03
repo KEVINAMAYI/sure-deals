@@ -129,7 +129,7 @@ new #[Layout('layouts.front-end')] class extends Component {
                         <div class="single-product">
                             <div class="product-img">
                                 <img class="img-fluid w-100"
-                                     src="{{ asset('storage/' . ($latest_products->first()?->images->first()?->image_url ?? 'placeholder.jpg')) }}"
+                                     src="{{ asset('storage/' . ($product->images->first()?->image_url ?? 'placeholder.jpg')) }}"
                                      alt=""/>
                                 <div class="p_icon w-100">
                                     <a target="_blank"
@@ -195,7 +195,7 @@ new #[Layout('layouts.front-end')] class extends Component {
                         <div class="single-product">
                             <div class="product-img">
                                 <img class="img-fluid"
-                                     src="{{ asset('storage/' . ($latest_products->first()?->images->first()?->image_url ?? 'placeholder.jpg')) }}"
+                                     src="{{ asset('storage/' . ($product->images->first()?->image_url ?? 'placeholder.jpg')) }}"
                                      alt="Product Image"/>
                                 <div class="p_icon w-100">
                                     <a target="_blank"
@@ -242,7 +242,6 @@ new #[Layout('layouts.front-end')] class extends Component {
         </div>
     </section>
 
-    <!--================ New Product Area =================-->
     <section class="new_product_area section_gap_top section_gap_bottom_custom">
         <div class="container">
             <div class="row justify-content-center">
@@ -326,7 +325,6 @@ new #[Layout('layouts.front-end')] class extends Component {
             </div>
         </div>
     </section>
-    <!--================ End New Product Area =================-->
 
     <!--================ Inspired Product Area =================-->
     <section class="inspired_product_area section_gap_bottom_custom">
