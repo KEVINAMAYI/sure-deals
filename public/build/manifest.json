@@ -1,0 +1,135 @@
+{
+  "public/dashboard/fonts/boxicons.eot": {
+    "file": "assets/boxicons-CASQlNmZ.eot",
+    "src": "public/dashboard/fonts/boxicons.eot"
+  },
+  "public/dashboard/fonts/boxicons.svg": {
+    "file": "assets/boxicons-Cv8c-MCu.svg",
+    "src": "public/dashboard/fonts/boxicons.svg"
+  },
+  "public/dashboard/fonts/boxicons.ttf": {
+    "file": "assets/boxicons-BDxpaK7B.ttf",
+    "src": "public/dashboard/fonts/boxicons.ttf"
+  },
+  "public/dashboard/fonts/boxicons.woff": {
+    "file": "assets/boxicons-BRXHbA3Z.woff",
+    "src": "public/dashboard/fonts/boxicons.woff"
+  },
+  "public/dashboard/fonts/boxicons.woff2": {
+    "file": "assets/boxicons-D-9kh4JX.woff2",
+    "src": "public/dashboard/fonts/boxicons.woff2"
+  },
+  "public/dashboard/fonts/dripicons-v2.eot": {
+    "file": "assets/dripicons-v2-DFvnbGWz.eot",
+    "src": "public/dashboard/fonts/dripicons-v2.eot"
+  },
+  "public/dashboard/fonts/dripicons-v2.svg": {
+    "file": "assets/dripicons-v2-DLwXtOXU.svg",
+    "src": "public/dashboard/fonts/dripicons-v2.svg"
+  },
+  "public/dashboard/fonts/dripicons-v2.ttf": {
+    "file": "assets/dripicons-v2-OmeD2O4i.ttf",
+    "src": "public/dashboard/fonts/dripicons-v2.ttf"
+  },
+  "public/dashboard/fonts/dripicons-v2.woff": {
+    "file": "assets/dripicons-v2-DRZ43psE.woff",
+    "src": "public/dashboard/fonts/dripicons-v2.woff"
+  },
+  "public/dashboard/fonts/fa-brands-400.eot": {
+    "file": "assets/fa-brands-400-BP-byM1z.eot",
+    "src": "public/dashboard/fonts/fa-brands-400.eot"
+  },
+  "public/dashboard/fonts/fa-brands-400.svg": {
+    "file": "assets/fa-brands-400-CwYvrPXy.svg",
+    "src": "public/dashboard/fonts/fa-brands-400.svg"
+  },
+  "public/dashboard/fonts/fa-brands-400.ttf": {
+    "file": "assets/fa-brands-400-BvOfcHLm.ttf",
+    "src": "public/dashboard/fonts/fa-brands-400.ttf"
+  },
+  "public/dashboard/fonts/fa-brands-400.woff": {
+    "file": "assets/fa-brands-400-DqZqNCSp.woff",
+    "src": "public/dashboard/fonts/fa-brands-400.woff"
+  },
+  "public/dashboard/fonts/fa-brands-400.woff2": {
+    "file": "assets/fa-brands-400-B9NtTMAN.woff2",
+    "src": "public/dashboard/fonts/fa-brands-400.woff2"
+  },
+  "public/dashboard/fonts/fa-regular-400.eot": {
+    "file": "assets/fa-regular-400-C8GVsgD2.eot",
+    "src": "public/dashboard/fonts/fa-regular-400.eot"
+  },
+  "public/dashboard/fonts/fa-regular-400.svg": {
+    "file": "assets/fa-regular-400-DYS_BsKA.svg",
+    "src": "public/dashboard/fonts/fa-regular-400.svg"
+  },
+  "public/dashboard/fonts/fa-regular-400.ttf": {
+    "file": "assets/fa-regular-400-CcXn14M0.ttf",
+    "src": "public/dashboard/fonts/fa-regular-400.ttf"
+  },
+  "public/dashboard/fonts/fa-regular-400.woff": {
+    "file": "assets/fa-regular-400-Cea8WKql.woff",
+    "src": "public/dashboard/fonts/fa-regular-400.woff"
+  },
+  "public/dashboard/fonts/fa-regular-400.woff2": {
+    "file": "assets/fa-regular-400-BxYFLS9j.woff2",
+    "src": "public/dashboard/fonts/fa-regular-400.woff2"
+  },
+  "public/dashboard/fonts/fa-solid-900.eot": {
+    "file": "assets/fa-solid-900-DRNqNWD9.eot",
+    "src": "public/dashboard/fonts/fa-solid-900.eot"
+  },
+  "public/dashboard/fonts/fa-solid-900.svg": {
+    "file": "assets/fa-solid-900-QT1_Ihr7.svg",
+    "src": "public/dashboard/fonts/fa-solid-900.svg"
+  },
+  "public/dashboard/fonts/fa-solid-900.ttf": {
+    "file": "assets/fa-solid-900-v_-DUAvR.ttf",
+    "src": "public/dashboard/fonts/fa-solid-900.ttf"
+  },
+  "public/dashboard/fonts/fa-solid-900.woff": {
+    "file": "assets/fa-solid-900-Ic6bH3kJ.woff",
+    "src": "public/dashboard/fonts/fa-solid-900.woff"
+  },
+  "public/dashboard/fonts/fa-solid-900.woff2": {
+    "file": "assets/fa-solid-900-DQndEtzL.woff2",
+    "src": "public/dashboard/fonts/fa-solid-900.woff2"
+  },
+  "public/dashboard/fonts/materialdesignicons-webfont.eot": {
+    "file": "assets/materialdesignicons-webfont-C9N43Jxz.eot",
+    "src": "public/dashboard/fonts/materialdesignicons-webfont.eot"
+  },
+  "public/dashboard/fonts/materialdesignicons-webfont.ttf": {
+    "file": "assets/materialdesignicons-webfont-hPx70ptL.ttf",
+    "src": "public/dashboard/fonts/materialdesignicons-webfont.ttf"
+  },
+  "public/dashboard/fonts/materialdesignicons-webfont.woff": {
+    "file": "assets/materialdesignicons-webfont-DSMUHRBL.woff",
+    "src": "public/dashboard/fonts/materialdesignicons-webfont.woff"
+  },
+  "public/dashboard/fonts/materialdesignicons-webfont.woff2": {
+    "file": "assets/materialdesignicons-webfont-D8huMFN2.woff2",
+    "src": "public/dashboard/fonts/materialdesignicons-webfont.woff2"
+  },
+  "public/dashboard/images/auth-bg.jpg": {
+    "file": "assets/auth-bg-BjDYncUQ.jpg",
+    "src": "public/dashboard/images/auth-bg.jpg"
+  },
+  "resources/css/dashboard.css": {
+    "file": "assets/dashboard-DcJAaK_G.css",
+    "src": "resources/css/dashboard.css",
+    "isEntry": true
+  },
+  "resources/css/front-end.css": {
+    "file": "assets/front-end-l0sNRNKZ.js",
+    "name": "front-end",
+    "src": "resources/css/front-end.css",
+    "isEntry": true
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-bllTs64x.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  }
+}
