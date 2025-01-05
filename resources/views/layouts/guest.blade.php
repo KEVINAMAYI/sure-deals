@@ -14,9 +14,11 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="{{ asset('build/assets/dashboard-DcJAaK_G.css') }}">
+
 
     <!-- Scripts -->
-    @vite('resources/css/dashboard.css')
+{{--    @vite('resources/css/dashboard.css')--}}
 
 </head>
 
