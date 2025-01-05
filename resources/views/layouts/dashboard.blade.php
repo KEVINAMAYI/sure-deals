@@ -10,7 +10,6 @@
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description"/>
     <meta content="Themesbrand" name="author"/>
 
-    <link rel="stylesheet" href="">
     <link rel="stylesheet" href="{{ asset('build/assets/dashboard-DcJAaK_G.css') }}">
 
 {{--    @vite('resources/css/dashboard.css')--}}
