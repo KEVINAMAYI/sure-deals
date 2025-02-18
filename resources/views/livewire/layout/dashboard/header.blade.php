@@ -24,14 +24,12 @@ new class extends Component {
             <div class="navbar-brand-box">
                 <a href="#" class="logo logo-dark">
                                 <span class="logo-sm">
-                                    <img src="front-end-assets/images/gsm_logo_transparent.png" alt="" height="40">
+                                    <img src="front-end/img/logo.png" width="60" height="40">
                                 </span>
                     <span class="logo-lg">
-                                    <img src="front-end-assets/images/gsm_logo_transparent.png" alt=""
-                                         height="40"> <span class="logo-txt">SURE DEALS</span>
+                                   <img src="front-end/img/logo.png" width="60" height="40">
                                 </span>
                 </a>
-
                 <a href="#" class="logo logo-light">
                                 <span class="logo-sm">
                                     <img src="front-end-assets/images/gsm_logo_transparent.png" alt="" height="40">
@@ -71,9 +69,7 @@ new class extends Component {
                 <button type="button" class="btn header-item bg-light-subtle border-start border-end"
                         id="page-header-user-dropdown"
                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img class="rounded-circle" width="50" height="46"
-                         src="front-end-assets/images/gsm_logo_transparent.png"
-                         alt="SURE DEALS">
+                    <img src="front-end/img/logo.png" width="60" height="40">
                     <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                 </button>
                 <div class="dropdown-menu dropdown-menu-end">

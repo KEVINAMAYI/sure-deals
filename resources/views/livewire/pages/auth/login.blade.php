@@ -29,10 +29,10 @@ new #[Layout('layouts.guest')] class extends Component {
 
     <div class="w-100">
         <div class="d-flex flex-column h-100">
-            <div class="mb-4 mb-md-5 text-center">
-{{--                <a href="index.html" class="d-block auth-logo">--}}
-{{--                    <img width="100"  src="front-end-assets/images/gsm_logo_transparent.png"   alt="" height="90">--}}
-{{--                </a>--}}
+            <div class="mb-4  text-center">
+                <a href="index.html" class="d-block auth-logo">
+                    <img src="front-end/img/logo.png" width="170" height="130">
+                </a>
             </div>
             <div class="auth-content my-auto">
                 <div class="text-center">
@@ -54,8 +54,10 @@ new #[Layout('layouts.guest')] class extends Component {
                         </div>
 
                         <div class="input-group auth-pass-inputgroup">
-                            <input type="password" wire:model="form.password" id="password" class="form-control" placeholder="Enter password"
-                                   aria-label="Password" aria-describedby="password-addon" required autocomplete="current-password">
+                            <input type="password" wire:model="form.password" id="password" class="form-control"
+                                   placeholder="Enter password"
+                                   aria-label="Password" aria-describedby="password-addon" required
+                                   autocomplete="current-password">
                             <button class="btn btn-light shadow-none ms-0" type="button" id="password-addon"><i
                                     class="mdi mdi-eye-outline"></i></button>
                             <x-input-error :messages="$errors->get('form.password')" class="mt-2"/>
