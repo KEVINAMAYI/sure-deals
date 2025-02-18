@@ -30,22 +30,101 @@ new #[Layout('layouts.front-end')] class extends Component {
 } ?>
 <!--start page content-->
 
+@push('style')
+    <!-- owl stylesheets -->
+    <link rel="stylesheet" href="frontend/css/owl.carousel.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+@endpush
 <div class="page-content">
 
     <!--================Home Banner Area =================-->
-    <section class="home_banner_area mb-40">
-        <div class="banner_inner d-flex align-items-center">
-            <div class="container">
-                <div class="banner_content row">
-                    <div class="col-lg-12">
-                        <p class="sub text-uppercase">SURE DEALS</p>
-                        <h3><span>One</span> Stop <br/>For All <span>Construction Materials</span></h3>
-                        <a class="main_btn mt-20" href="{{ route('front-end.shop',0 ) ?? 'N/A'  }}">SHOP NOW</a>
+    <div style="margin-bottom: 20px;" class="banner_section layout_padding">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div style="height: auto; min-height: 600px; padding-top: 20px; padding-bottom: 20px; display: flex; align-items: center; justify-content: center; text-align: center;
+        background: linear-gradient(to bottom, rgba(0, 128, 0, 0.6), rgba(0, 128, 0, 0.6)), url('front-end/img/banner/banner_image_1.jpg');
+        background-size: cover; background-position: center; background-repeat: no-repeat;"
+                         class="row">
+                        <div class="col-sm-12">
+                            <p style="color:white; font-size:40px; font-weight: bold;  font-family: 'Poppins', sans-serif;"
+                               class="text-tra">
+                                Agricultural Equipment <br><br>
+                                and Machinery
+                            </p><br>
+                            <a href="{{ route('front-end.shop',5 ) ?? 'N/A'  }}"
+                               style="padding: 15px 30px; margin-top:-15px; font-size: 18px; color: white; background: #0D0D1F; border-radius: 40px; text-decoration: none; text-transform: uppercase; font-weight: bold; display: inline-block; transition: background 0.3s ease-in-out; font-family: 'Poppins', sans-serif;">
+                                SHOP NOW
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div style="height: auto; min-height: 600px; padding-top: 30px; padding-bottom: 30px; display: flex; align-items: center; justify-content: center; text-align: center;
+        background: linear-gradient(to bottom, rgba(0, 128, 0, 0.6), rgba(0, 128, 0, 0.6)), url('front-end/img/banner/banner_image_2.jpg');
+        background-size: cover; background-position: center; background-repeat: no-repeat;"
+                         class="row">
+                        <div class="col-sm-12">
+                            <p style="color:white; font-size:40px; font-weight: bold; margin-bottom: 20px; font-family: 'Poppins', sans-serif;"
+                               class="text-tra">
+                                Hand tools<br><br>
+                                and Construction Machineries
+                            </p><br>
+                            <a href="{{ route('front-end.shop',6 ) ?? 'N/A'  }}"
+                               style="padding: 15px 30px; margin-top:-15px;  font-size: 18px; color: white; background: #0D0D1F; border-radius: 40px; text-decoration: none; text-transform: uppercase; font-weight: bold; display: inline-block; transition: background 0.3s ease-in-out; font-family: 'Poppins', sans-serif;">
+                                SHOP NOW
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div style="height: auto; min-height: 600px; padding-top: 20px; padding-bottom: 20px; display: flex; align-items: center; justify-content: center; text-align: center;
+        background: linear-gradient(to bottom, rgba(0, 128, 0, 0.6), rgba(0, 128, 0, 0.6)), url('front-end/img/banner/banner_image_3.jpg');
+        background-size: cover; background-position: center; background-repeat: no-repeat;"
+                         class="row">
+                        <div class="col-sm-12">
+                            <p style="color:white; font-size:40px; font-weight: bold; margin-bottom: 20px; font-family: 'Poppins', sans-serif;"
+                               class="text-tra">
+                                Repair <br><br>
+                                and Construction Materials
+                            </p><br>
+                            <a href="{{ route('front-end.shop',1 ) ?? 'N/A'  }}"
+                               style="padding: 15px 30px; margin-top:-15px;  font-size: 18px; color: white; background: #0D0D1F; border-radius: 40px; text-decoration: none; text-transform: uppercase; font-weight: bold; display: inline-block; transition: background 0.3s ease-in-out; font-family: 'Poppins', sans-serif;">
+                                SHOP NOW
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div style="height: auto; min-height: 600px; padding-top: 20px; padding-bottom: 20px; display: flex; align-items: center; justify-content: center; text-align: center;
+        background: linear-gradient(to bottom, rgba(0, 128, 0, 0.6), rgba(0, 128, 0, 0.6)), url('front-end/img/banner/banner_image_4.jpg');
+        background-size: cover; background-position: center; background-repeat: no-repeat;"
+                         class="row">
+                        <div class="col-sm-12">
+                            <p style="color:white; font-size:40px; font-weight: bold; margin-bottom: 20px; font-family: 'Poppins', sans-serif;"
+                               class="text-tra">
+                                Waterproofing Chemicals<br><br>
+                                and Admixtures
+                            </p><br>
+                            <a href="{{ route('front-end.shop',2) ?? 'N/A'  }}"
+                               style="padding: 15px 30px; margin-top:-15px; font-size: 18px; color: white; background: #0D0D1F; border-radius: 40px; text-decoration: none; text-transform: uppercase; font-weight: bold; display: inline-block; transition: background 0.3s ease-in-out; font-family: 'Poppins', sans-serif;">
+                                SHOP NOW
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
     <!--================End Home Banner Area =================-->
 
     <!-- Start feature Area -->
