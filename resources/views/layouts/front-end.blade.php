@@ -69,7 +69,7 @@
             <nav class="navbar navbar-expand-lg navbar-light w-100">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <a class="navbar-brand logo_h" href="index.html">
-                    <img src="img/logo.png" alt=""/>
+                    <img height="80" width="110" src="front-end/img/logo.png" alt=""/>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent"
