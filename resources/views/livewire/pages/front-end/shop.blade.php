@@ -79,6 +79,7 @@ new #[Layout('layouts.front-end')] class extends Component {
 
 } ?>
 @push('styles')
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
           integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous">
     <link rel="stylesheet" href="front-end/css/main.css"/>
@@ -155,6 +156,11 @@ new #[Layout('layouts.front-end')] class extends Component {
                                                 </a>
                                                 <a href="{{ route('front-end.product-details', $product->id) }}">
                                                     <i class="ti-shopping-cart"></i>
+                                                </a>
+                                                <!-- Phone Icon with Tooltip and Click-to-Dial -->
+                                                <a href="tel:+254791397770" data-bs-toggle="tooltip" data-bs-placement="top"
+                                                   title="+254 791 397 770">
+                                                    <i class="fas fa-phone"></i>
                                                 </a>
                                             </div>
                                         </div>
@@ -248,5 +254,14 @@ new #[Layout('layouts.front-end')] class extends Component {
     </section>
     <!--================End Category Product Area =================-->
 </div>
-
-
+@push('scripts')
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+        });
+    </script>
+@endpush

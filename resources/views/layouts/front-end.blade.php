@@ -33,7 +33,6 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
-
     @stack('styles')
 </head>
 
@@ -47,7 +46,7 @@
                     <div style="font-weight:bold;" class="float-left">
                         <p style="color:#61AF18;">Phone: 0791397770 | 07196195551 | 0712199576 |
                             0700203468</p>
-                        <p style="color:#61AF18;">email: suredealsbuildingstoresltd@gmail.com</p>
+                        <p style="color:#61AF18;">email: info@suredealsbuildingstore.co.ke</p>
                     </div>
                 </div>
                 <div class="col-lg-2">

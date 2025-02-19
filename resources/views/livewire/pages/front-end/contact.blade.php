@@ -31,7 +31,7 @@ new #[Layout('layouts.front-end')] class extends Component {
 
         try {
 
-            $user = User::where('email', 'kevinamayi20@gmail.com')->first();
+            $user = User::where('email', 'info@suredealsbuildingstore.co.ke')->first();
             $user->notify(new Inquiry($this->name, $this->email, $this->subject, $this->content));
 
             $this->alert('success', 'Email was sent successfully');
@@ -141,7 +141,7 @@ new #[Layout('layouts.front-end')] class extends Component {
                     <span class="contact-info__icon"><i class="ti-email"></i></span>
                     <div class="media-body">
                         <h3>
-                            <a href="mailto:Suredealsbuildingstoresltd@gmail.com">Suredealsbuildingstoresltd@gmail.com</a>
+                            <a href="mailto:info@suredealsbuildingstore.co.ke">info@suredealsbuildingstore.co.ke</a>
                         </h3>
                         <p>Send us your inquiry anytime!</p>
                     </div>

@@ -190,6 +190,15 @@ new #[Layout('layouts.front-end')] class extends Component {
                                 <i class="bi bi-envelope"></i>
                                 Send Email
                             </a>
+
+
+                            <a style="background-color:#71CD14; color:white; cursor: pointer; "
+                               href="tel:+254791397770" data-bs-toggle="tooltip" data-bs-placement="top"
+                               title="+254 791 397 770"
+                               class="mt-2 main_btn">
+                                <i class="bi bi-phone"></i>
+                                Call Us
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -412,15 +421,23 @@ new #[Layout('layouts.front-end')] class extends Component {
 </div>
 
 @push('scripts')
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
     <script>
-        window.addEventListener('close-modal', event => {
-            $('#callBackModal').modal('hide');
-            $('#sendEmailModal').modal('hide');
-            location.reload();
+        document.addEventListener("DOMContentLoaded", function () {
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+
+            window.addEventListener('close-modal', event => {
+                $('#callBackModal').modal('hide');
+                $('#sendEmailModal').modal('hide');
+                location.reload();
+            });
         });
     </script>
 @endpush
